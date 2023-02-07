@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dialogue", menuName = "ScriptableObjects/Dialogue")]
 public class Dialogue : ScriptableObject
 {
-    public DialogueLine[] _lines;
+    [SerializeField] private DialogueLine[] _lines;
 
     public DialogueLine[] Lines
     {

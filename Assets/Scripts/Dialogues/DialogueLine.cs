@@ -9,9 +9,9 @@ public class DialogueLine
     {
         Happy,
         Sad,
-        Crying,
-        Rage,
-        Talking,
+        Angry,
+        Surprised,
+        Fear,
         
     }
 

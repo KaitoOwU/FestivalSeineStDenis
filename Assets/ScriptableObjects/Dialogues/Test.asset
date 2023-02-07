@@ -14,4 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines:
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _line: 
+    _emotion: 1
+    _line: Je suis sad
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: Je suis happy
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 2
+    _line: Je suis crying
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 3
+    _line: Je suis rage
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 4
+    _line: Je suis talking

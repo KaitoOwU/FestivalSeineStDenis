@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01ec448d60d3d74ea017c37b5a8d367, type: 3}
   m_Name: TestChara
   m_EditorClassIdentifier: 
-  _gender: 0
-  _name: David
+  _gender: 2
+  _name: Morgana
   _description: il est bo
-  _happySprite: {fileID: 21300000, guid: 25096ce515c063c48a2bd6b108c95912, type: 3}
-  _sadSprite: {fileID: 21300000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
-  _madSprite: {fileID: 21300000, guid: 25096ce515c063c48a2bd6b108c95912, type: 3}
+  _happySprite: {fileID: 21300000, guid: 570d7e74ad91d16409a1d311bd1b50f8, type: 3}
+  _sadSprite: {fileID: 21300000, guid: 538a7e0313058a84ab17484f8624a7d0, type: 3}
+  _angrySprite: {fileID: 21300000, guid: 766401c378fb03546b62cb8a6f4f110d, type: 3}
+  _surprisedSprite: {fileID: 21300000, guid: 091d64e8170a9324296b7fe0029f3cf3, type: 3}
+  _fearSprite: {fileID: 21300000, guid: d7a4fd5cd8fe88240816e7e2e2bc442c, type: 3}

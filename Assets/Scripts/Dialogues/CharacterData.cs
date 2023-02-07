@@ -22,6 +22,8 @@ public class CharacterData : ScriptableObject
     [Header("Emotions")]
     public Sprite _happySprite;
     public Sprite _sadSprite;
-    public Sprite _madSprite;
+    public Sprite _angrySprite;
+    public Sprite _surprisedSprite;
+    public Sprite _fearSprite;
 
 }
