@@ -14,17 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines:
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 1
-    _line: Je suis sad
-  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 0
-    _line: Je suis happy
+    _line: Je suis content
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: Je suis contente
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 2
-    _line: Je suis crying
+    _line: Je suis pas content
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 2
+    _line: moi non plus
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 3
+    _line: et je suis surprise
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 3
-    _line: Je suis rage
+    _line: "je le suis de m\xEAme"
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 4
-    _line: Je suis talking
+    _emotion: 1
+    _line: 'mais je suis triste
+
+'

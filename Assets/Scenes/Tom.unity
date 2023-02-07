@@ -276,8 +276,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 45.86
+  m_fontSizeBase: 45.86
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -710,9 +710,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testDialogue: {fileID: 11400000, guid: 876aafb6460bda54480eb8479da09565, type: 2}
+  _dialogueCanva: {fileID: 2125265296}
   _characterSprite: {fileID: 1965749856}
   _characterLine: {fileID: 370168375}
-  _characterName: {fileID: 0}
+  _characterName: {fileID: 686571842}
 --- !u!4 &1566757853
 Transform:
   m_ObjectHideFlags: 0
