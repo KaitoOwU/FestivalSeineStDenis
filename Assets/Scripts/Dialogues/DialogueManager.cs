@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private Dialogue testDialogue;
     [SerializeField] private GameObject _dialogueCanva;
+    [SerializeField] private GameObject _dialogueNextButton;
     [SerializeField] private Image _characterSprite;
     [SerializeField] private TextMeshProUGUI _characterLine;
     [SerializeField] private TextMeshProUGUI _characterName;
@@ -28,6 +29,16 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         QueueDialogue(testDialogue);
+        _dialogueNextButton.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+        QueueDialogue(testDialogue);
+
+        }
     }
 
     public void QueueDialogue(Dialogue dialogue)
@@ -72,10 +83,20 @@ public class DialogueManager : MonoBehaviour
 
             foreach(DialogueLine dl in currentDialogue.Lines)
             {
+                _dialogueNextButton.SetActive(false);
                 _characterSprite.sprite = GetEmotion(dl._character, dl._emotion);
-                _characterLine.text = dl._line;
                 _characterName.text = dl._character._name;
+                _characterLine.text = null;
+
+                foreach(char c in dl._line)
+                {
+                    _characterLine.text += c;
+                    yield return null;
+
+                }
+
                 yield return new WaitForSeconds(0.1f);
+                _dialogueNextButton.SetActive(true);
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
             }
         }
@@ -84,5 +105,6 @@ public class DialogueManager : MonoBehaviour
         _characterSprite.sprite = null;
         _characterLine.text = null;
         OnDialogueEnd?.Invoke();
+        _dialogueRoutine = null;
     }
 }
