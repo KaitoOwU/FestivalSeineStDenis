@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void Start()
     {
-        QueueDialogue(testDialogue);
+        //QueueDialogue(testDialogue);
         _dialogueNextButton.SetActive(false);
     }
 
