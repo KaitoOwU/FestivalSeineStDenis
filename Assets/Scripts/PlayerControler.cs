@@ -42,7 +42,7 @@ public class PlayerControler : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(_playerMovement.ReadValue<Vector2>());
+        //Debug.Log(_playerMovement.ReadValue<Vector2>());
     }
 
     private void OnDisable()
