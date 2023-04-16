@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4775887706820906778}
   - component: {fileID: 3380626358513251977}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2146850667253524476}
   - component: {fileID: 6786751875053436576}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: AimGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 829151247248249666}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

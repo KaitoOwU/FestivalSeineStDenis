@@ -47,7 +47,6 @@ public class PlayerManager : MonoBehaviour
 
     public void SkipDialogue()
     {
-        Debug.Log("ss");
         if(GameManager.instance.GameState == GameManager.GAMESTATE.Dialogue)
         {
             DialogueManager.Skip = true;
