@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,9 +9,12 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
     private PlayerInputManager _playerInputManager;
+    private CameraBehaviour _camera;
 
-    public List<GameObject> _players = new List<GameObject>();
+    private List<GameObject> _players = new List<GameObject>();
+    private int index = 0;
 
+    public CameraBehaviour Camera { get => _camera; set => _camera = value; }
     public List<GameObject> Players
     {
         get
@@ -23,6 +27,7 @@ public class PlayerManager : MonoBehaviour
             _players = value;
         }
     }
+
 
     #region singleton
     private void Awake()
@@ -40,6 +45,12 @@ public class PlayerManager : MonoBehaviour
     {
         _playerInputManager =  GetComponent<PlayerInputManager>();
         _playerInputManager.onPlayerJoined += ff => AddNewPlayer();
+    }
+
+    public void AddPlayerToCinemachineGroup(Player player)
+    {
+        Camera.GetComponent<CinemachineTargetGroup>().m_Targets.SetValue(player.gameObject, index);
+        index++;
     }
 
     public void AddNewPlayer()

@@ -10,7 +10,7 @@ public class PlayerControler : MonoBehaviour
 
     private Rigidbody2D _rb;
 
-    private PlayerControlerInput _inputActions;
+    private PlayerInput _inputActions;
     private InputAction _playerMovement;
 
     private Action OnStartMove;
@@ -22,8 +22,8 @@ public class PlayerControler : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
 
-        _inputActions = new PlayerControlerInput();
-        _playerMovement = _inputActions.Player1.Move;
+        _inputActions = GetComponent<PlayerInput>();
+        _playerMovement = _inputActions.actions["move"];
         Debug.Log(_playerMovement);
 
         OnStartMove += StartMove;

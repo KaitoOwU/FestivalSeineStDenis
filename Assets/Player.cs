@@ -13,5 +13,7 @@ public class Player : MonoBehaviour
         _playerManager = PlayerManager.instance;
         transform.parent = _playerManager.transform;
         _playerManager.Players.Add(gameObject);
+
+        _playerManager.AddPlayerToCinemachineGroup(this);
     }
 }
