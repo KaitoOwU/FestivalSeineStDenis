@@ -9,12 +9,14 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
     private PlayerInputManager _playerInputManager;
-    private CameraBehaviour _camera;
+    [SerializeField] private CameraBehaviour _camera;
+    [SerializeField] private DialogueManager _dialogueManager;
 
     private List<GameObject> _players = new List<GameObject>();
     private int index = 0;
 
     public CameraBehaviour Camera { get => _camera; set => _camera = value; }
+    public DialogueManager DialogueManager { get => _dialogueManager; set => _dialogueManager = value; }
     public List<GameObject> Players
     {
         get
@@ -29,6 +31,7 @@ public class PlayerManager : MonoBehaviour
     }
 
 
+
     #region singleton
     private void Awake()
     {
@@ -41,21 +44,24 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
 
+
+    public void SkipDialogue()
+    {
+        Debug.Log("ss");
+        if(GameManager.instance.GameState == GameManager.GAMESTATE.Dialogue)
+        {
+            DialogueManager.Skip = true;
+        }
+    }
+
     private void Start()
     {
         _playerInputManager =  GetComponent<PlayerInputManager>();
         _playerInputManager.onPlayerJoined += ff => AddNewPlayer();
     }
 
-    public void AddPlayerToCinemachineGroup(Player player)
-    {
-        Camera.GetComponent<CinemachineTargetGroup>().m_Targets.SetValue(player.gameObject, index);
-        index++;
-    }
-
     public void AddNewPlayer()
     {
-        print("Player joined");
-        //_playerInputManager.playerJoinedEvent.
+        Camera.StartCameraMove(_players.Count);
     }
 }

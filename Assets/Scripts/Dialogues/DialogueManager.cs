@@ -21,6 +21,10 @@ public class DialogueManager : MonoBehaviour
     private Queue _dialogueQueue = new Queue();
     private Coroutine _dialogueRoutine;
 
+    private bool _skip;
+
+    public bool Skip { get => _skip; set => _skip = value; }
+
     private void Awake()
     {
         OnDialogueStart += () => _dialogueCanva.SetActive(true);
@@ -36,9 +40,24 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-        QueueDialogue(testDialogue);
+            QueueDialogue(testDialogue);
 
         }
+    }
+
+    public void NextDialogue()
+    {
+        Skip = true;
+    }
+
+    private bool CanNextDialogue()
+    {
+        if (Skip)
+        {
+            Skip = false;
+            return true;
+        }
+        return false;
     }
 
     public void QueueDialogue(Dialogue dialogue)
@@ -76,6 +95,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator DisplayDialogue()
     {
         OnDialogueStart?.Invoke();
+        GameManager.instance.GameState = GameManager.GAMESTATE.Dialogue;
 
         while(_dialogueQueue.Count >= 1)
         {
@@ -97,10 +117,11 @@ public class DialogueManager : MonoBehaviour
 
                 yield return new WaitForSeconds(0.1f);
                 _dialogueNextButton.SetActive(true);
-                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+                yield return new WaitUntil(() => CanNextDialogue());
             }
         }
 
+        GameManager.instance.GameState = GameManager.GAMESTATE.Playing;
         _characterName.text = null;
         _characterSprite.sprite = null;
         _characterLine.text = null;
