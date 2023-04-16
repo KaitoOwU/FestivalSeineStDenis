@@ -96,6 +96,7 @@ public class DialogueManager : MonoBehaviour
     {
         OnDialogueStart?.Invoke();
         GameManager.instance.GameState = GameManager.GAMESTATE.Dialogue;
+        GameManager.instance.OnDialogue?.Invoke();
 
         while(_dialogueQueue.Count >= 1)
         {
@@ -122,6 +123,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         GameManager.instance.GameState = GameManager.GAMESTATE.Playing;
+        GameManager.instance.OnStopDialogue?.Invoke();
         _characterName.text = null;
         _characterSprite.sprite = null;
         _characterLine.text = null;

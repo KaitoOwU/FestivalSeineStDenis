@@ -45,7 +45,25 @@ public class PlayerControler : MonoBehaviour
 
         _playerMovement.Enable();
         _playerAim.Enable();
+
+        GameManager.instance.OnDialogue += OnPause;
+        GameManager.instance.OnGamePause += OnPause;
+        GameManager.instance.OnStopDialogue += OnStopPause;
+        GameManager.instance.OnGameUnPause += OnStopPause;
     
+    }
+
+    private void OnPause()
+    {
+        StopMove();
+        _playerMovement.Disable();
+        _playerAim.Disable();
+    }
+
+    private void OnStopPause()
+    {
+        _playerMovement.Enable();
+        _playerAim.Enable();
     }
 
     private void SkipDialogue()
@@ -57,14 +75,15 @@ public class PlayerControler : MonoBehaviour
     {
         //_playerMovement.Enable();   
     }
-    private void Update()
-    {
-        //Debug.Log(_playerMovement.ReadValue<Vector2>());
-    }
-
     private void OnDisable()
     {
         _playerMovement.Disable();
+        _playerAim.Disable();
+
+        GameManager.instance.OnDialogue -= OnPause;
+        GameManager.instance.OnGamePause -= OnPause;
+        GameManager.instance.OnStopDialogue -= OnStopPause;
+        GameManager.instance.OnGameUnPause -= OnStopPause;
     }
 
     private void StartMove()
