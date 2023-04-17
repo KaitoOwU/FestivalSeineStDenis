@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 3361790827266469757}
   - component: {fileID: 2538348959978613192}
   - component: {fileID: 5245882934069738486}
+  - component: {fileID: 8186619637240183752}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -315,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d031111b03ccb41a12ef867e10c8df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerType: 0
 --- !u!61 &5245882934069738486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -341,3 +343,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8186619637240183752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227808634134946229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4b485e0aa17aa499ede10f16986a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootPoint: {fileID: 829151247248249666}
+  _shootInterval: 0.1
+  _shootRange: 10
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128

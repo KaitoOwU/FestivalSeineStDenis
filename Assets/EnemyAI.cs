@@ -5,6 +5,14 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
+    public enum ENEMYSTATE
+    {
+        MOVING,
+        KNOCBACK
+    }
+
+    private ENEMYSTATE _enemyState;
+
     private Transform _target;
 
     [SerializeField] private float _speed;
@@ -28,11 +36,14 @@ public class EnemyAI : MonoBehaviour
     private Coroutine FollowRoutine;
     private Coroutine PathRoutine;
 
+    public ENEMYSTATE EnemyState { get => _enemyState; set => _enemyState = value; }
 
     private void Start()
     {
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
+
+        _rb.velocity = Vector3.zero;
 
         GameManager.instance.OnDialogue += OnPause;
         GameManager.instance.OnGamePause += OnPause;
@@ -119,7 +130,11 @@ public class EnemyAI : MonoBehaviour
             }
 
             Vector2 direction = ((Vector2)_path.vectorPath[_currentWayPoint] - _rb.position).normalized;
-            _rb.velocity = direction * _speed * Time.deltaTime;
+
+            if(_enemyState != ENEMYSTATE.KNOCBACK)
+            {
+                _rb.velocity = direction * _speed * Time.deltaTime;
+            }
 
             float distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWayPoint]);
 
