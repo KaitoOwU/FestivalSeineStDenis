@@ -23,7 +23,6 @@ public class TriggerArea : MonoBehaviour
             return;
 
         Collider2D[] numPlayer = Physics2D.OverlapAreaAll(new Vector2(transform.position.x, transform.position.y) + _topRight, new Vector2(transform.position.x, transform.position.y) + _botleft, _layer);
-        Debug.Log(numPlayer.Length);
 
         if(!_isEntered && numPlayer.Length >= 2)
         {

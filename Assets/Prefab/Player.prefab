@@ -358,6 +358,8 @@ MonoBehaviour:
   _shootPoint: {fileID: 829151247248249666}
   _shootInterval: 0.1
   _shootRange: 10
+  _maxAmmo: 10
+  _reloadTime: 1
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 128

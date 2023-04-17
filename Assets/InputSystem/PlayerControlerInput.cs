@@ -62,6 +62,15 @@ public partial class @PlayerControlerInput : IInputActionCollection2, IDisposabl
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""46617e5b-5bcc-4e12-a665-cdf19787dbb4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,6 +280,28 @@ public partial class @PlayerControlerInput : IInputActionCollection2, IDisposabl
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Validate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4cce7da2-c2fa-4eb7-a509-3f9f5c17785c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c15438c0-7c9a-4f79-9fb6-5cebad6bc36f"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -862,6 +893,7 @@ public partial class @PlayerControlerInput : IInputActionCollection2, IDisposabl
         m_Player1_Aim = m_Player1.FindAction("Aim", throwIfNotFound: true);
         m_Player1_Fire = m_Player1.FindAction("Fire", throwIfNotFound: true);
         m_Player1_Validate = m_Player1.FindAction("Validate", throwIfNotFound: true);
+        m_Player1_Reload = m_Player1.FindAction("Reload", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -937,6 +969,7 @@ public partial class @PlayerControlerInput : IInputActionCollection2, IDisposabl
     private readonly InputAction m_Player1_Aim;
     private readonly InputAction m_Player1_Fire;
     private readonly InputAction m_Player1_Validate;
+    private readonly InputAction m_Player1_Reload;
     public struct Player1Actions
     {
         private @PlayerControlerInput m_Wrapper;
@@ -945,6 +978,7 @@ public partial class @PlayerControlerInput : IInputActionCollection2, IDisposabl
         public InputAction @Aim => m_Wrapper.m_Player1_Aim;
         public InputAction @Fire => m_Wrapper.m_Player1_Fire;
         public InputAction @Validate => m_Wrapper.m_Player1_Validate;
+        public InputAction @Reload => m_Wrapper.m_Player1_Reload;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -966,6 +1000,9 @@ public partial class @PlayerControlerInput : IInputActionCollection2, IDisposabl
                 @Validate.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnValidate;
                 @Validate.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnValidate;
                 @Validate.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnValidate;
+                @Reload.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnReload;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -982,6 +1019,9 @@ public partial class @PlayerControlerInput : IInputActionCollection2, IDisposabl
                 @Validate.started += instance.OnValidate;
                 @Validate.performed += instance.OnValidate;
                 @Validate.canceled += instance.OnValidate;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
             }
         }
     }
@@ -1142,6 +1182,7 @@ public partial class @PlayerControlerInput : IInputActionCollection2, IDisposabl
         void OnAim(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnValidate(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

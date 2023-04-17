@@ -728,7 +728,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.75
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 6.75
+    OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -1463,32 +1463,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1926166433 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2156045182999550668, guid: cb2dbfc4e8b99cd4787c5d8016765698, type: 3}
-  m_PrefabInstance: {fileID: 2156045183306673517}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1926166439
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926166433}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &1965749854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,22 +1780,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2156045182999550667, guid: cb2dbfc4e8b99cd4787c5d8016765698, type: 3}
-      propertyPath: _speed
-      value: 230
-      objectReference: {fileID: 0}
-    - target: {fileID: 2156045182999550667, guid: cb2dbfc4e8b99cd4787c5d8016765698, type: 3}
-      propertyPath: _detectionSize
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2156045182999550667, guid: cb2dbfc4e8b99cd4787c5d8016765698, type: 3}
-      propertyPath: _attackDetectionSize
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2156045182999550668, guid: cb2dbfc4e8b99cd4787c5d8016765698, type: 3}
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2156045183115180196, guid: cb2dbfc4e8b99cd4787c5d8016765698, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb2dbfc4e8b99cd4787c5d8016765698, type: 3}
