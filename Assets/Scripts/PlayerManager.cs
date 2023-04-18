@@ -3,7 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class PlayerManager : MonoBehaviour
     private PlayerInputManager _playerInputManager;
     [SerializeField] private CameraBehaviour _camera;
     [SerializeField] private DialogueManager _dialogueManager;
+
+    [SerializeField] private Image _p1Image;
 
     private List<GameObject> _players = new List<GameObject>();
     private int index = 0;
@@ -39,6 +43,7 @@ public class PlayerManager : MonoBehaviour
         {
             instance = this;
         }
+        DontDestroyOnLoad(this);
     }
 
     #endregion
@@ -61,6 +66,13 @@ public class PlayerManager : MonoBehaviour
 
     public void AddNewPlayer()
     {
-        Camera.StartCameraMove(_players.Count);
+        if(SceneManager.GetActiveScene().name == "Menu")
+        {
+
+        }
+        else
+        {
+            Camera.StartCameraMove(_players.Count);
+        }
     }
 }

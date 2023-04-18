@@ -123,9 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHp: 150
-  _hp: 150
   _knockBackResistance: 0
-  _rb: {fileID: 1926166439}
   OnDamageGD:
     m_PersistentCalls:
       m_Calls: []

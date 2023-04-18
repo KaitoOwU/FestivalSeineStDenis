@@ -14,6 +14,7 @@ public class Player1ShootBehaviour : MonoBehaviour
     private SHOOTSTATE _shootState = SHOOTSTATE.None;
 
     [SerializeField] private Transform _shootPoint;
+    [SerializeField] private Transform _playerGfx;
 
 
     [SerializeField] private float _shootInterval;
@@ -24,6 +25,9 @@ public class Player1ShootBehaviour : MonoBehaviour
     private int _currentAmmo;
 
     [SerializeField] private LayerMask _enemyLayer;
+
+    [SerializeField] private Animator _animator;
+    [SerializeField] private AnimationClip _reloadAnimation;
 
     private PlayerInput _inputActions;
     private InputAction _shootInput;
@@ -102,7 +106,8 @@ public class Player1ShootBehaviour : MonoBehaviour
     {
         if(ShootRoutine != null)
         {
-            if(ShootState != SHOOTSTATE.Reload)
+            _animator.SetBool("IsFire", false);
+            if (ShootState != SHOOTSTATE.Reload)
             {
                 ShootState = SHOOTSTATE.None;
             }
@@ -113,6 +118,7 @@ public class Player1ShootBehaviour : MonoBehaviour
 
     private IEnumerator PlayerShootRoutine()
     {
+        _animator.SetBool("IsFire", true);
         while(CoolDownRoutine != null || ShootState == SHOOTSTATE.Reload )
         {
             yield return null;
@@ -123,8 +129,19 @@ public class Player1ShootBehaviour : MonoBehaviour
         {
             while(_currentAmmo <= 0)
             {
+                _animator.SetBool("IsFire", false);
                 ReloadRoutine = StartCoroutine(ShootReloadRoutine());
                 yield return new WaitUntil( () => _currentAmmo == _maxAmmo);
+                _animator.SetBool("IsFire", true);
+            }
+            Debug.Log(_shootPoint.eulerAngles.z);
+            if (_shootPoint.eulerAngles.z <= 180)
+            {
+                _playerGfx.eulerAngles = new Vector3(_playerGfx.eulerAngles.x, 180, _playerGfx.eulerAngles.z);
+            }
+            else if (_shootPoint.eulerAngles.z > 180)
+            {
+                _playerGfx.eulerAngles = new Vector3(_playerGfx.eulerAngles.x, 0, _playerGfx.eulerAngles.z);
             }
 
             RaycastHit2D raycast = Physics2D.Raycast(transform.position, _shootPoint.up, _shootRange, _enemyLayer);
@@ -135,6 +152,8 @@ public class Player1ShootBehaviour : MonoBehaviour
                 raycast.collider.gameObject.GetComponent<IShootableEnemy>()?.Damage(10, 5, ( raycast.collider.transform.position - transform.position).normalized);
                 Debug.Log("Toucher");
             }
+
+
 
             _currentAmmo--;
             Debug.Log("Ammo: " + _currentAmmo);
@@ -153,9 +172,13 @@ public class Player1ShootBehaviour : MonoBehaviour
 
     private IEnumerator ShootReloadRoutine()
     {
+        _animator.SetTrigger("Reload");
         Debug.Log("Reload");
         ShootState = SHOOTSTATE.Reload;
-        yield return new WaitForSeconds(_reloadTime);
+
+        yield return new WaitForSeconds(_reloadAnimation.length);
+
+
         _currentAmmo = _maxAmmo;
         ReloadCompleted();
         Debug.Log("EndReload");

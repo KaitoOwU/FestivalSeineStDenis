@@ -8,8 +8,12 @@ public class PlayerControler : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] Transform _aimPoint;
+    [SerializeField] Transform _playerGfx;
 
     private Rigidbody2D _rb;
+    [SerializeField] private Animator _animator;
+
+    private Player1ShootBehaviour _playerShoot;
 
     private PlayerInput _inputActions;
     private InputAction _playerMovement;
@@ -25,6 +29,7 @@ public class PlayerControler : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _playerShoot = GetComponent<Player1ShootBehaviour>();
 
         _inputActions = GetComponent<PlayerInput>();
         _playerMovement = _inputActions.actions["move"];
@@ -112,7 +117,25 @@ public class PlayerControler : MonoBehaviour
     {
         while (true)
         {
-            _rb.velocity = _playerMovement.ReadValue<Vector2>() * Time.fixedDeltaTime * _speed;
+            if(_playerShoot.ShootState != Player1ShootBehaviour.SHOOTSTATE.Shooting && _playerShoot.ShootState != Player1ShootBehaviour.SHOOTSTATE.Reload)
+            {
+                _rb.velocity = _playerMovement.ReadValue<Vector2>() * Time.fixedDeltaTime * _speed;
+                _animator.SetFloat("Speed", MathF.Abs( _rb.velocity.x) + MathF.Abs(_rb.velocity.y));
+            }
+            else
+            {
+                _rb.velocity = Vector2.zero;
+                _animator.SetFloat("Speed", MathF.Abs(_rb.velocity.x) + MathF.Abs(_rb.velocity.y));
+            }
+
+            if(_rb.velocity.x > 0)
+            {
+                _playerGfx.eulerAngles = new Vector3(_playerGfx.eulerAngles.x, 0, _playerGfx.eulerAngles.z);
+            }
+            else if (_rb.velocity.x < 0)
+            {
+                _playerGfx.eulerAngles = new Vector3(_playerGfx.eulerAngles.x, 180, _playerGfx.eulerAngles.z);
+            }
 
             yield return new WaitForFixedUpdate();
         }
