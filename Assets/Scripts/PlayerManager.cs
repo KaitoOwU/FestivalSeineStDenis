@@ -14,7 +14,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private CameraBehaviour _camera;
     [SerializeField] private DialogueManager _dialogueManager;
 
-    [SerializeField] private Image _p1Image;
+    [SerializeField] private GameObject _p1Image;
+    [SerializeField] private GameObject _p2Image;
+    [SerializeField] private GameObject _startGame;
 
     private List<GameObject> _players = new List<GameObject>();
     private int index = 0;
@@ -50,6 +52,21 @@ public class PlayerManager : MonoBehaviour
 
 
 
+
+    private void Start()
+    {
+        _playerInputManager =  GetComponent<PlayerInputManager>();
+        _playerInputManager.onPlayerJoined += ff => AddNewPlayer();
+        SceneManager.activeSceneChanged += SceneChange;
+    }
+
+    private void SceneChange(Scene s1, Scene s2)
+    {
+        if(SceneManager.GetActiveScene().name == "Tom")
+        {
+            Camera.StartCameraMove();
+        }
+    }
     public void SkipDialogue()
     {
         if(GameManager.instance.GameState == GameManager.GAMESTATE.Dialogue)
@@ -58,21 +75,20 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        _playerInputManager =  GetComponent<PlayerInputManager>();
-        _playerInputManager.onPlayerJoined += ff => AddNewPlayer();
-    }
-
     public void AddNewPlayer()
     {
         if(SceneManager.GetActiveScene().name == "Menu")
         {
-
-        }
-        else
-        {
-            Camera.StartCameraMove(_players.Count);
+            if(index == 0)
+            {
+                _p1Image.SetActive(true);
+            }
+            else
+            {
+                _p2Image.SetActive(true);
+                _startGame.SetActive(true);
+            }
+            index++;
         }
     }
 }

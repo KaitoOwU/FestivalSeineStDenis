@@ -38,19 +38,20 @@ public class Player1ShootBehaviour : MonoBehaviour
     private Coroutine ReloadRoutine;
 
     public SHOOTSTATE ShootState { get => _shootState; set => _shootState = value; }
+    public InputAction ShootInput { get => _shootInput; set => _shootInput = value; }
 
     private void Start()
     {
         _inputActions = GetComponent<PlayerInput>();
-        _shootInput = _inputActions.actions["fire"];
+        ShootInput = _inputActions.actions["fire"];
         _reloadInput = _inputActions.actions["reload"];
 
-        _shootInput.started += f => Shoot();
-        _shootInput.canceled += f => StopShoot();
+        ShootInput.started += f => Shoot();
+        ShootInput.canceled += f => StopShoot();
 
         _reloadInput.started += ff => Reload();
 
-        _shootInput.Enable();
+        ShootInput.Enable();
 
         GameManager.instance.OnDialogue += OnPause;
         GameManager.instance.OnGamePause += OnPause;
@@ -58,21 +59,22 @@ public class Player1ShootBehaviour : MonoBehaviour
         GameManager.instance.OnGameUnPause += OnStopPause;
 
         _currentAmmo = _maxAmmo;
+        ShootInput.Disable();
     }
 
     private void OnPause()
     {
-        _shootInput.Disable();
+        ShootInput.Disable();
     }
 
     private void OnStopPause()
     {
-        _shootInput.Enable();
+        ShootInput.Enable();
     }
 
     private void OnDisable()
     {
-        _shootInput.Disable();
+        ShootInput.Disable();
     }
 
     private void Reload()

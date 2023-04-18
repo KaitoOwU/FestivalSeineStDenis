@@ -1,7 +1,9 @@
+using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +23,12 @@ public class GameManager : MonoBehaviour
 
     public Action OnDialogue;
     public Action OnStopDialogue;
+
+    [Scene]
+    public int _gameScene;
+
+    [Scene]
+    public int _menuScene;
 
     public GAMESTATE GameState { get => _gameState; set => _gameState = value; }
 
@@ -42,6 +50,14 @@ public class GameManager : MonoBehaviour
     {
         GameState = GAMESTATE.Playing;
     }
+
+    public void OpenGameScene()
+    {
+        SceneManager.LoadScene(_gameScene);
+    }
+
+    public void OpenMenuScene() => SceneManager.LoadScene(_menuScene);
+    public void QuitGame() => Application.Quit();
 
 
 }

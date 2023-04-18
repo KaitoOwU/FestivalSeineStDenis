@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class PlayerControler : MonoBehaviour
@@ -31,6 +32,8 @@ public class PlayerControler : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _playerShoot = GetComponent<Player1ShootBehaviour>();
 
+        _playerGfx.gameObject.SetActive(false);
+
         _inputActions = GetComponent<PlayerInput>();
         _playerMovement = _inputActions.actions["move"];
         _playerAim = _inputActions.actions["aim"];
@@ -48,14 +51,26 @@ public class PlayerControler : MonoBehaviour
 
         _playerValidate.started += ff => SkipDialogue();
 
-        _playerMovement.Enable();
-        _playerAim.Enable();
-
         GameManager.instance.OnDialogue += OnPause;
         GameManager.instance.OnGamePause += OnPause;
         GameManager.instance.OnStopDialogue += OnStopPause;
         GameManager.instance.OnGameUnPause += OnStopPause;
-    
+        SceneManager.activeSceneChanged += OnSceneChange;
+
+        _playerMovement.Disable();
+        _playerAim.Disable();
+
+    }
+
+    private void OnSceneChange(Scene s1, Scene s2)
+    {
+        if(SceneManager.GetActiveScene().name == "Tom")
+        {
+            _playerShoot.ShootInput.Enable();
+            _playerGfx.gameObject.SetActive(true);
+            _playerMovement.Enable();
+            _playerAim.Enable();
+        }
     }
 
     private void OnPause()
@@ -89,6 +104,7 @@ public class PlayerControler : MonoBehaviour
         GameManager.instance.OnGamePause -= OnPause;
         GameManager.instance.OnStopDialogue -= OnStopPause;
         GameManager.instance.OnGameUnPause -= OnStopPause;
+        SceneManager.activeSceneChanged -= OnSceneChange;
     }
 
     private void StartMove()

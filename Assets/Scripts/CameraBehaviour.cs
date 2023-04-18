@@ -20,12 +20,9 @@ public class CameraBehaviour : MonoBehaviour
     public CinemachineTargetGroup TargetGroup { get => _targetGroup; set => _targetGroup = value; }
 
     
-    public void StartCameraMove(int numberOfPlayers)
+    public void StartCameraMove()
     {
-        if (numberOfPlayers == 1)
-        {
-            Invoke("StartRoutine", 0.1f);
-        }
+        Invoke("StartRoutine", 0.1f);
     }
 
     private void StartRoutine()
