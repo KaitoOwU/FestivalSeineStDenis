@@ -1,0 +1,501 @@
+fileFormatVersion: 2
+guid: d6937a99b5ff50a4d9ba2050363a2ea9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: G bras haut
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 792
+        width: 131
+        height: 218
+      alignment: 9
+      pivot: {x: 0.530258, y: 0.7818293}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4462e683792ec11458e8deeac86b009a
+      internalID: 1930291734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D bras haut
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 794
+        width: 131
+        height: 216
+      alignment: 9
+      pivot: {x: 0.3146706, y: 0.77297014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9607631dda725949adeec3195b18ebc
+      internalID: 173797642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corps bas
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 608
+        width: 295
+        height: 405
+      alignment: 9
+      pivot: {x: 0.48926485, y: 0.23257409}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16ee47eb2c193640bff636e2e23850a
+      internalID: 148441203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tete
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 762
+        width: 162
+        height: 235
+      alignment: 9
+      pivot: {x: 0.27714556, y: 0.37871483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be24326979bc8949ad2d1fccfb03aac
+      internalID: -1702527491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G bras bas
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 527
+        width: 108
+        height: 241
+      alignment: 9
+      pivot: {x: 0.38646218, y: 0.91212785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b2695324313f3408e788c08b455d62
+      internalID: -1823706969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D bras bas
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 527
+        width: 108
+        height: 241
+      alignment: 9
+      pivot: {x: 0.33536953, y: 0.8943203}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81cadbfcf8c4614f86d639bcd42f47c
+      internalID: -1580447435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corps jambe
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 464
+        width: 137
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f9b2b04eb94d5479c28df11f9cd4fd
+      internalID: -1954400594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corps haut
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 448
+        width: 358
+        height: 269
+      alignment: 9
+      pivot: {x: 0.53715336, y: 0.13975202}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2104ec475bb406f49badd41c020a1389
+      internalID: -1383665726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G bras main
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 399
+        width: 92
+        height: 111
+      alignment: 9
+      pivot: {x: 0.3691938, y: 0.8880148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0680e9697ed71bc4d8c0ca890f020309
+      internalID: 1312900270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D bras main
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 396
+        width: 92
+        height: 112
+      alignment: 9
+      pivot: {x: 0.36230916, y: 0.8845504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7532ef033704f3a4c858316a4ad3c0e7
+      internalID: 656117760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G jambe bas
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 140
+        width: 122
+        height: 284
+      alignment: 9
+      pivot: {x: 0.80111396, y: 0.8813643}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2636c194663def74686b27dbe2feadd1
+      internalID: -1255747764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D jambe bas
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 140
+        width: 123
+        height: 284
+      alignment: 9
+      pivot: {x: 0.7883668, y: 0.8813643}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b5edc121e535544803c5dcc6a09fbc
+      internalID: 722593775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G jambe haut
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 147
+        width: 134
+        height: 224
+      alignment: 9
+      pivot: {x: 0.4621865, y: 0.84496415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7051d315638fe4741bf7f1c1be639ae9
+      internalID: 1391459635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D jambe haut
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 147
+        width: 130
+        height: 225
+      alignment: 9
+      pivot: {x: 0.49025562, y: 0.83498603}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69b6d92246e0094190fa08dcb98611b
+      internalID: 766623226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ceinture
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 46
+        width: 229
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bdddc1a023c2f4399d41cb0d1de8a6
+      internalID: -707185450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G jambe pied
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 32
+        width: 187
+        height: 85
+      alignment: 9
+      pivot: {x: 0.30693847, y: 0.8651226}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f2668c8ef7ac845ba4684278255773
+      internalID: 378682551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D jambe pied
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 32
+        width: 187
+        height: 85
+      alignment: 9
+      pivot: {x: 0.3103256, y: 0.87257415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc9b5731e4de3e448d50003320a02c9
+      internalID: 264033648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      corps haut: -1383665726
+      tete: -1702527491
+      D bras main: 656117760
+      G jambe pied: 378682551
+      D jambe haut: 766623226
+      G bras main: 1312900270
+      corps jambe: -1954400594
+      corps bas: 148441203
+      testperso_atlas_20: -795625288
+      testperso_atlas_19: -667676809
+      G bras bas: -1823706969
+      testperso_atlas_16: -1159188156
+      D jambe bas: 722593775
+      D bras bas: -1580447435
+      D jambe pied: 264033648
+      G bras haut: 1930291734
+      ceinture: -707185450
+      G jambe bas: -1255747764
+      G jambe haut: 1391459635
+      testperso_atlas_15: 482742941
+      D bras haut: 173797642
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
