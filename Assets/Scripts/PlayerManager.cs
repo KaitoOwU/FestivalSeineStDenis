@@ -16,6 +16,8 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private GameObject _p1Image;
     [SerializeField] private GameObject _p2Image;
+    [SerializeField] private GameObject _p1ContolerImage;
+    [SerializeField] private GameObject _p2ContolerImage;
     [SerializeField] private GameObject _startGame;
 
     private List<GameObject> _players = new List<GameObject>();
@@ -35,6 +37,7 @@ public class PlayerManager : MonoBehaviour
             _players = value;
         }
     }
+
 
 
 
@@ -82,9 +85,11 @@ public class PlayerManager : MonoBehaviour
             if(index == 0)
             {
                 _p1Image.SetActive(true);
+                _p1ContolerImage.SetActive(false);
             }
             else
             {
+                _p2ContolerImage.SetActive(false);
                 _p2Image.SetActive(true);
                 _startGame.SetActive(true);
             }
