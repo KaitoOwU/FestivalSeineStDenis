@@ -3,7 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -11,6 +13,12 @@ public class PlayerManager : MonoBehaviour
     private PlayerInputManager _playerInputManager;
     [SerializeField] private CameraBehaviour _camera;
     [SerializeField] private DialogueManager _dialogueManager;
+
+    [SerializeField] private GameObject _p1Image;
+    [SerializeField] private GameObject _p2Image;
+    [SerializeField] private GameObject _p1ContolerImage;
+    [SerializeField] private GameObject _p2ContolerImage;
+    [SerializeField] private GameObject _startGame;
 
     private List<GameObject> _players = new List<GameObject>();
     private int index = 0;
@@ -32,6 +40,7 @@ public class PlayerManager : MonoBehaviour
 
 
 
+
     #region singleton
     private void Awake()
     {
@@ -39,12 +48,28 @@ public class PlayerManager : MonoBehaviour
         {
             instance = this;
         }
+        DontDestroyOnLoad(this);
     }
 
     #endregion
 
 
 
+
+    private void Start()
+    {
+        _playerInputManager =  GetComponent<PlayerInputManager>();
+        _playerInputManager.onPlayerJoined += ff => AddNewPlayer();
+        SceneManager.activeSceneChanged += SceneChange;
+    }
+
+    private void SceneChange(Scene s1, Scene s2)
+    {
+        if(SceneManager.GetActiveScene().name == "Tom")
+        {
+            Camera.StartCameraMove();
+        }
+    }
     public void SkipDialogue()
     {
         if(GameManager.instance.GameState == GameManager.GAMESTATE.Dialogue)
@@ -53,14 +78,22 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        _playerInputManager =  GetComponent<PlayerInputManager>();
-        _playerInputManager.onPlayerJoined += ff => AddNewPlayer();
-    }
-
     public void AddNewPlayer()
     {
-        Camera.StartCameraMove(_players.Count);
+        if(SceneManager.GetActiveScene().name == "Menu")
+        {
+            if(index == 0)
+            {
+                _p1Image.SetActive(true);
+                _p1ContolerImage.SetActive(false);
+            }
+            else
+            {
+                _p2ContolerImage.SetActive(false);
+                _p2Image.SetActive(true);
+                _startGame.SetActive(true);
+            }
+            index++;
+        }
     }
 }

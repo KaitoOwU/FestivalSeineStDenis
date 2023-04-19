@@ -25,10 +25,11 @@ public class EnemyHealth : MonoBehaviour, IShootableEnemy
     {
         _rb = GetComponent<Rigidbody2D>();
         _enemyAI = GetComponent<EnemyAI>();
-        _maxHp = _hp;
+        _hp = _maxHp;
     }
     public void Damage(float damage, float knockBackForce, Vector2 hitDirection)
     {
+        Debug.Log("Damage before" + _hp);
         _hp -= damage;
         if(_hp <= 0)
         {
@@ -37,8 +38,12 @@ public class EnemyHealth : MonoBehaviour, IShootableEnemy
             OnDeathGD?.Invoke();
         }
 
+        Debug.Log("Damage after" + _hp);
         StartCoroutine(KnockBackRoutine());
-        _rb.velocity = (hitDirection * (knockBackForce - _knockBackResistance));
+        if(_enemyAI.EnemyState != EnemyAI.ENEMYSTATE.KNOCBACK)
+        {
+            _rb.velocity = (hitDirection * (knockBackForce - _knockBackResistance));
+        }
     }
 
 
@@ -51,6 +56,6 @@ public class EnemyHealth : MonoBehaviour, IShootableEnemy
     {
         _enemyAI.EnemyState = EnemyAI.ENEMYSTATE.KNOCBACK;
         yield return new WaitForSeconds(0.1f);
-        _enemyAI.EnemyState = EnemyAI.ENEMYSTATE.MOVING;
+        _enemyAI.EnemyState = EnemyAI.ENEMYSTATE.IDLE;
     }
 }

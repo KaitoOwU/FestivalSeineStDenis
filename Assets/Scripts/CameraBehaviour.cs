@@ -20,12 +20,9 @@ public class CameraBehaviour : MonoBehaviour
     public CinemachineTargetGroup TargetGroup { get => _targetGroup; set => _targetGroup = value; }
 
     
-    public void StartCameraMove(int numberOfPlayers)
+    public void StartCameraMove()
     {
-        if (numberOfPlayers == 1)
-        {
-            Invoke("StartRoutine", 0.1f);
-        }
+        Invoke("StartRoutine", 0.1f);
     }
 
     private void StartRoutine()
@@ -44,7 +41,7 @@ public class CameraBehaviour : MonoBehaviour
 
             float distance = Vector2.Distance(p1.position, p2.position);
 
-            _cam.m_Lens.OrthographicSize = Mathf.Clamp(distance, 5f, 6.75f);
+            _cam.m_Lens.OrthographicSize = Mathf.Clamp(distance, 4f, 6.3f);
 
             transform.position = new Vector3(midPoint.x, midPoint.y, -10);
         }
