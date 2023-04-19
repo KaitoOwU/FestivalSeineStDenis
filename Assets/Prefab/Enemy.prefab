@@ -146,11 +146,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 230
   _nextWayPointDistance: 1.2
+  _attackRate: 1.5
   _detectionSize: 4
   _attackDetectionSize: 2.5
   _detectionLayer:
     serializedVersion: 2
     m_Bits: 64
+  _bullet: {fileID: 6697813605728867716, guid: a56710dda0fc85049b942d0b07c5e047, type: 3}
+  _bulletSpeed: 5
 --- !u!1 &2156045183115180203
 GameObject:
   m_ObjectHideFlags: 0

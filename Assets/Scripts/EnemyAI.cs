@@ -15,10 +15,11 @@ public class EnemyAI : MonoBehaviour
 
     private ENEMYSTATE _enemyState = ENEMYSTATE.IDLE;
 
-    private Transform _target;
+    protected Transform _target;
 
     [SerializeField] private float _speed;
     [SerializeField] private float _nextWayPointDistance;
+    [SerializeField] private float _attackRate;
 
     private Path _path;
     private int _currentWayPoint;
@@ -38,8 +39,10 @@ public class EnemyAI : MonoBehaviour
     private Coroutine FollowRoutine;
     private Coroutine PathRoutine;
     private Coroutine AttackRoutine;
+    private Coroutine AttackCoolDownRoutine;
 
     public ENEMYSTATE EnemyState { get => _enemyState; set => _enemyState = value; }
+    public Coroutine AttackRoutine1 { get => AttackRoutine; set => AttackRoutine = value; }
 
     private void Start()
     {
@@ -130,11 +133,15 @@ public class EnemyAI : MonoBehaviour
                 _enemyState = ENEMYSTATE.IDLE;
                 yield break;
             }
-
             else
             {
                 _recheadEndOfPath = false;
             }
+            //if(AttackRoutine1 != null)
+            //{
+            //    StopCoroutine(AttackRoutine1);
+            //    AttackRoutine1 = null;
+            //}
 
             Vector2 direction = ((Vector2)_path.vectorPath[_currentWayPoint] - _rb.position).normalized;
 
@@ -147,7 +154,7 @@ public class EnemyAI : MonoBehaviour
 
             if (hit != null)
             {
-                AttackRoutine = StartCoroutine(EnemyAttackRoutine());
+                AttackRoutine1 = StartCoroutine(EnemyAttackRoutine());
                 EnemyState = ENEMYSTATE.ATTACKING;
 
                 FollowRoutine = null;
@@ -169,16 +176,22 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator EnemyAttackRoutine()
     {
         _rb.velocity = Vector2.zero;
-
+        Debug.Log("ppppppp");
         while (true)
         {
+            if(AttackCoolDownRoutine == null)
+            {
+                AttackCoolDownRoutine = StartCoroutine(AttackRoutineCoolDown());
+            }
+            yield return new WaitUntil(() => AttackCoolDownRoutine == null);
+
             AttackLogic();
 
             Collider2D hit = Physics2D.OverlapCircle(transform.position, _attackDetectionSize, _detectionLayer);
             if(hit == null)
             {
                 _enemyState = ENEMYSTATE.IDLE;
-                AttackRoutine = null;
+                AttackRoutine1 = null;
                 yield break;
             }
             yield return null;
@@ -195,6 +208,12 @@ public class EnemyAI : MonoBehaviour
         if (_seeker.IsDone())
             _seeker.StartPath(transform.position, _target.position, OnPathComplete);
         yield return new WaitForSeconds(.5f);
+    }
+
+    private IEnumerator AttackRoutineCoolDown()
+    {
+        yield return new WaitForSeconds(_attackRate);
+        AttackCoolDownRoutine = null;
     }
 
     private void OnDrawGizmos()

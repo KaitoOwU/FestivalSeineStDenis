@@ -10,13 +10,12 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField] private float _hitBoxRadius;
     [SerializeField] private LayerMask _playerLayer;
 
-    private Rigidbody2D _rb;
+    [SerializeField] private Rigidbody2D _rb;
     private Coroutine _bulletRoutine;
     private Coroutine _lifeRoutine;
 
     private void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
         _lifeRoutine = StartCoroutine(LifeRoutine());
     }
 
