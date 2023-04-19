@@ -1,0 +1,501 @@
+fileFormatVersion: 2
+guid: b34b9c1f3225cc7408c56936670bdd04
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: testperso2_atlas 1_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 792
+        width: 131
+        height: 218
+      alignment: 9
+      pivot: {x: 0.52686197, y: 0.78517056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d986855e27120ea49b96ee02be9ea65a
+      internalID: 316569045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_1
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 793
+        width: 131
+        height: 216
+      alignment: 9
+      pivot: {x: 0.30301335, y: 0.7715197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d689a707ae2e674bb93f9cae4cc6dff
+      internalID: 2094542280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_2
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 608
+        width: 295
+        height: 405
+      alignment: 9
+      pivot: {x: 0.48777723, y: 0.23555577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1ae8d7be53daa479e8e49f8f19f75c
+      internalID: 224349613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_3
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 762
+        width: 162
+        height: 235
+      alignment: 9
+      pivot: {x: 0.28278378, y: 0.3802072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5113b0702e5414f9a17e382d676f37
+      internalID: 1555015484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_4
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 527
+        width: 108
+        height: 241
+      alignment: 9
+      pivot: {x: 0.38053137, y: 0.9185685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ecbdc05d81275449f4ed3a95729dde
+      internalID: -1991272620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_5
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 527
+        width: 108
+        height: 241
+      alignment: 9
+      pivot: {x: 0.33708814, y: 0.89910054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da1d9b5e943db54fbaa9ce205687893
+      internalID: -147837732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_6
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 464
+        width: 137
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc26869b324e874f93fd71294f097a5
+      internalID: 2031566493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_7
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 447
+        width: 358
+        height: 270
+      alignment: 9
+      pivot: {x: 0.53919035, y: 0.16082549}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7c2df44fd376248bfcf5b26215796a
+      internalID: -1945349476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_8
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 399
+        width: 92
+        height: 111
+      alignment: 9
+      pivot: {x: 0.32150525, y: 0.9121223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b106f751356c5cb4299b8bdce5d9befc
+      internalID: 1735188584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_9
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 396
+        width: 92
+        height: 112
+      alignment: 9
+      pivot: {x: 0.34700444, y: 0.8874975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700607ecbefcc4c4a95612cf2b8d1ed3
+      internalID: 1914779728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_10
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 140
+        width: 122
+        height: 284
+      alignment: 9
+      pivot: {x: 0.7980489, y: 0.87997466}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbff277e0f769cf4dac53e821d73e894
+      internalID: -1877330103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_11
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 140
+        width: 123
+        height: 284
+      alignment: 9
+      pivot: {x: 0.7860891, y: 0.87997466}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8011d0c87bc50fb4895b538e54b734f0
+      internalID: 1769364490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_12
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 147
+        width: 134
+        height: 224
+      alignment: 9
+      pivot: {x: 0.4912467, y: 0.8298966}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d736be0ef542484d908c4741e36563e
+      internalID: 439293122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 147
+        width: 130
+        height: 225
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.8232172}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adabd1c3d26da7e41b490a7b003ac087
+      internalID: -351701734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_14
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 46
+        width: 230
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59ced5ebd8fa444aaca163ca26e0c73
+      internalID: 423823290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_17
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 32
+        width: 187
+        height: 85
+      alignment: 9
+      pivot: {x: 0.30555096, y: 0.88638854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66761bc5f4dc593498f44c65535fb8da
+      internalID: 1754056609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testperso2_atlas 1_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 32
+        width: 187
+        height: 85
+      alignment: 9
+      pivot: {x: 0.31809598, y: 0.87258893}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd90709a502b5214eb5b9b3ec560a495
+      internalID: -456144708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      testperso2_atlas 1_4: -1991272620
+      testperso2_atlas 1_7: -1945349476
+      testperso2_atlas 1_19: 1244122866
+      testperso2_atlas 1_6: 2031566493
+      testperso2_atlas 1_1: 2094542280
+      testperso2_atlas 1_13: -351701734
+      testperso2_atlas 1_14: 423823290
+      testperso2_atlas 1_11: 1769364490
+      testperso2_atlas 1_3: 1555015484
+      testperso2_atlas 1_16: -1166578331
+      testperso2_atlas 1_5: -147837732
+      testperso2_atlas 1_10: -1877330103
+      testperso2_atlas 1_20: -1675873326
+      testperso2_atlas 1_12: 439293122
+      testperso2_atlas 1_15: -296627504
+      testperso2_atlas 1_18: -456144708
+      testperso2_atlas 1_17: 1754056609
+      testperso2_atlas 1_9: 1914779728
+      testperso2_atlas 1_8: 1735188584
+      testperso2_atlas 1_2: 224349613
+      testperso2_atlas 1_0: 316569045
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
