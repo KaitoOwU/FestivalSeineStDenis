@@ -7,11 +7,13 @@ public class EnemyAI : MonoBehaviour
 {
     public enum ENEMYSTATE
     {
+        IDLE,
         MOVING,
-        KNOCBACK
+        KNOCBACK,
+        ATTACKING
     }
 
-    private ENEMYSTATE _enemyState;
+    private ENEMYSTATE _enemyState = ENEMYSTATE.IDLE;
 
     private Transform _target;
 
@@ -35,6 +37,7 @@ public class EnemyAI : MonoBehaviour
 
     private Coroutine FollowRoutine;
     private Coroutine PathRoutine;
+    private Coroutine AttackRoutine;
 
     public ENEMYSTATE EnemyState { get => _enemyState; set => _enemyState = value; }
 
@@ -89,7 +92,7 @@ public class EnemyAI : MonoBehaviour
             return;
 
         Collider2D target = Physics2D.OverlapCircle(transform.position, _detectionSize, _detectionLayer);
-        if(target != null && FollowRoutine == null)
+        if(target != null && FollowRoutine == null && _enemyState != ENEMYSTATE.ATTACKING)
         {
             FollowRoutine = StartCoroutine(EnemyFollowRoutine(target.transform));
         }
@@ -117,13 +120,17 @@ public class EnemyAI : MonoBehaviour
 
         while (true)
         {
+            Debug.Log("foolox");
+            _enemyState = ENEMYSTATE.MOVING;
             if(_path == null || _currentWayPoint >= _path.vectorPath.Count)
             {
                 _recheadEndOfPath = true;
                 FollowRoutine = null;
                 _rb.velocity = Vector2.zero;
+                _enemyState = ENEMYSTATE.IDLE;
                 yield break;
             }
+
             else
             {
                 _recheadEndOfPath = false;
@@ -134,6 +141,17 @@ public class EnemyAI : MonoBehaviour
             if(_enemyState != ENEMYSTATE.KNOCBACK)
             {
                 _rb.velocity = direction * _speed * Time.deltaTime;
+            }
+
+            Collider2D hit = Physics2D.OverlapCircle(transform.position, _attackDetectionSize, _detectionLayer);
+
+            if (hit != null)
+            {
+                AttackRoutine = StartCoroutine(EnemyAttackRoutine());
+                EnemyState = ENEMYSTATE.ATTACKING;
+
+                FollowRoutine = null;
+                yield break;
             }
 
             float distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWayPoint]);
@@ -147,6 +165,31 @@ public class EnemyAI : MonoBehaviour
         }
 
     }
+
+    private IEnumerator EnemyAttackRoutine()
+    {
+        _rb.velocity = Vector2.zero;
+
+        while (true)
+        {
+            AttackLogic();
+
+            Collider2D hit = Physics2D.OverlapCircle(transform.position, _attackDetectionSize, _detectionLayer);
+            if(hit == null)
+            {
+                _enemyState = ENEMYSTATE.IDLE;
+                AttackRoutine = null;
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    protected virtual void AttackLogic()
+    {
+
+    }
+
     private IEnumerator EnemyPathRoutine()
     {
         if (_seeker.IsDone())

@@ -230,7 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd36a288076c544291b08ec960837cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 300
   _aimPoint: {fileID: 829151247248249666}
   _playerGfx: {fileID: 8715753344558751821}
   _playerGfxother: {fileID: 829151247248249666}
@@ -323,12 +322,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 829151247248249666}
   _playerGfx: {fileID: 8715753344558751821}
-  _shootInterval: 0.1
-  _shootRange: 10
-  _maxAmmo: 10
-  _reloadTime: 1
-  _animator: {fileID: 6667319379973545354}
-  _reloadAnimation: {fileID: 7400000, guid: 2cdacb27699dc5d42942b41c8ac3af7f, type: 2}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 128
