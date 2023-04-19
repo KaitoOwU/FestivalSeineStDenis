@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,6 +44,14 @@ public class Player1ShootBehaviour : MonoBehaviour
     private Coroutine CoolDownRoutine;
     private Coroutine ReloadRoutine;
 
+    private ParticleSystem _reloadParticules;
+
+
+    public Action OnStartReload;
+    public Action OnStopReload;
+
+    public Action OnShoot;
+
     public SHOOTSTATE ShootState { get => _shootState; set => _shootState = value; }
     public InputAction ShootInput { get => _shootInput; set => _shootInput = value; }
     public float ShootInterval { get => _shootInterval; set => _shootInterval = value; }
@@ -52,6 +61,7 @@ public class Player1ShootBehaviour : MonoBehaviour
     public AnimationClip ReloadAnimation { get => _reloadAnimation; set => _reloadAnimation = value; }
     public float ReloadTime { get => _reloadTime; set => _reloadTime = value; }
     public Coroutine ShootRoutine1 { get => ShootRoutine; set => ShootRoutine = value; }
+    public ParticleSystem ReloadParticules { get => _reloadParticules; set => _reloadParticules = value; }
 
     private void Start()
     {
@@ -164,6 +174,8 @@ public class Player1ShootBehaviour : MonoBehaviour
             RaycastHit2D raycast = Physics2D.Raycast(transform.position, _shootPoint.up, ShootRange, _enemyLayer);
             Debug.DrawRay(transform.position, _shootPoint.up * ShootRange, Color.red, 0.5f);
 
+            OnShoot?.Invoke();
+
             if (raycast.collider != null)
             {
                 raycast.collider.gameObject.GetComponent<IShootableEnemy>()?.Damage(_damage, _kockBack, ( raycast.collider.transform.position - transform.position).normalized);
@@ -187,12 +199,15 @@ public class Player1ShootBehaviour : MonoBehaviour
 
     private IEnumerator ShootReloadRoutine()
     {
+        OnStartReload?.Invoke();
         Animator.SetTrigger("Reload");
         Debug.Log("Reload");
         ShootState = SHOOTSTATE.Reload;
 
-        yield return new WaitForSeconds(ReloadTime);
+        yield return new WaitForSeconds(ReloadTime * 0.5f);
 
+        OnStopReload?.Invoke();
+        yield return new WaitForSeconds(ReloadTime * 0.5f);
 
         _currentAmmo = MaxAmmo;
         ReloadCompleted();

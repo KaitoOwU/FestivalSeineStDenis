@@ -33,9 +33,14 @@ public class Player : MonoBehaviour
     [SerializeField] private int _maxAmmo;
 
     // Health
-    [SerializeField] private Slider _layer1SliderP1;
-    [SerializeField] private Slider _layer2SliderP1;
-    [SerializeField] private Animator _healthBarAnimatorP1;
+    private Slider _layer1SliderP1;
+    private Slider _layer2SliderP1;
+    private Animator _healthBarAnimatorP1;
+
+    //particule
+
+    [SerializeField] private ParticleSystem _reloadP1;
+    [SerializeField] private ParticleSystem _shootP1;
 
 
     [Header("player 2 stats")]
@@ -50,9 +55,16 @@ public class Player : MonoBehaviour
     [SerializeField] private int _maxAmmo2;
 
     //Health
-    [SerializeField] private Slider _layer1SliderP2;
-    [SerializeField] private Slider _layer2SliderP2;
-    [SerializeField] private Animator _healthBarAnimatorP2;
+    private Slider _layer1SliderP2;
+    private Slider _layer2SliderP2;
+    private Animator _healthBarAnimatorP2;
+
+    //Particules
+    [SerializeField] private ParticleSystem _reload1P2;
+    [SerializeField] private ParticleSystem _reload2P2;
+    [SerializeField] private ParticleSystem _shoot1P2;
+    [SerializeField] private ParticleSystem _shoot2P2;
+
 
     private Player1ShootBehaviour _shootComponent;
 
@@ -91,7 +103,9 @@ public class Player : MonoBehaviour
             _shootComponent.Animator = _p1Animatior;
             _shootComponent.ReloadTime = _p1AnimationClip.length;
 
-            
+            _shootComponent.OnShoot += ShootParticuleP1;
+            _shootComponent.OnStartReload += ReloadParticuleP1;
+            _shootComponent.OnStopReload += StopReloadParticuleP1;
         }
         else
         {
@@ -105,11 +119,44 @@ public class Player : MonoBehaviour
             _shootComponent.Animator = _p2Animatior;
             _shootComponent.ReloadTime = _p2AnimationClip.length + 0.2f;
 
+            _shootComponent.OnShoot += ShootParticuleP2;
+            _shootComponent.OnStartReload += ReloadParticuleP2;
+            _shootComponent.OnStopReload += StopReloadParticuleP2;
+
         }
-
-        
-
-
     }
 
+
+    private void ShootParticuleP1()
+    {
+        //_shootP1.Play();
+    }
+
+    private void ShootParticuleP2()
+    {
+        _shoot1P2.Play();
+        _shoot2P2.Play();
+    }
+
+    private void ReloadParticuleP2()
+    {
+        _reload1P2.Play();
+        _reload2P2.Play();
+    }
+
+    private void StopReloadParticuleP2()
+    {
+        _reload1P2.Stop();
+        _reload2P2.Stop();
+    }
+
+    private void ReloadParticuleP1()
+    {
+        _reloadP1.Play();
+    }
+
+    private void StopReloadParticuleP1()
+    {
+        _reloadP1.Stop();
+    }
 }
