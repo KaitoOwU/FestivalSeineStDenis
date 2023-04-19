@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using static Player;
 using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.InputSystem.Composites;
 
 public class PlayerControler : MonoBehaviour
 {
     private float _speed;
+    private float _joyStickLastPosition;
 
     [SerializeField] Transform _aimPoint;
     [SerializeField] Transform _playerGfx;
@@ -32,14 +34,18 @@ public class PlayerControler : MonoBehaviour
     private Coroutine MoveRoutine;
     private Coroutine AimRoutine;
 
+    private Vector3 _velocity = Vector3.zero;
+
     public float Speed { get => _speed; set => _speed = value; }
     public Animator Animator { get => _animator; set => _animator = value; }
     public InputAction PlayerAim { get => _playerAim; set => _playerAim = value; }
+    public float JoyStickLastPosition { get => _joyStickLastPosition; set => _joyStickLastPosition = value; }
+    public Rigidbody2D Rb { get => _rb; set => _rb = value; }
 
     private void Start()
     {
         _player = GetComponent<Player>();
-        _rb = GetComponent<Rigidbody2D>();
+        Rb = GetComponent<Rigidbody2D>();
         _playerShoot = GetComponent<Player1ShootBehaviour>();
 
         _playerGfxother.gameObject.SetActive(false);
@@ -130,12 +136,15 @@ public class PlayerControler : MonoBehaviour
 
     private void StartMove()
     {
-        MoveRoutine = StartCoroutine(PlayerMoveRoutine());
+        if(_playerShoot.ShootRoutine1 == null)
+        {
+            MoveRoutine = StartCoroutine(PlayerMoveRoutine());
+        } 
     }
 
     private void StopMove()
     {
-        _rb.velocity = Vector2.zero;
+        Rb.velocity = Vector2.zero;
         MoveRoutine = null;
     }
 
@@ -154,10 +163,12 @@ public class PlayerControler : MonoBehaviour
     {
         while (true)
         {
-            if(_playerShoot.ShootState != Player1ShootBehaviour.SHOOTSTATE.Shooting && _playerShoot.ShootState != Player1ShootBehaviour.SHOOTSTATE.Reload)
+            if(_playerShoot.ShootState != Player1ShootBehaviour.SHOOTSTATE.Shooting && _playerShoot.ShootState != Player1ShootBehaviour.SHOOTSTATE.Reload && _playerShoot.ShootRoutine1 == null)
             {
-                _rb.velocity = _playerMovement.ReadValue<Vector2>() * Time.fixedDeltaTime * Speed;
-                Animator.SetFloat("Speed", MathF.Abs( _rb.velocity.x) + MathF.Abs(_rb.velocity.y));
+                //_rb.velocity = _playerMovement.ReadValue<Vector2>() * Time.fixedDeltaTime * Speed;
+                Rb.velocity = Vector3.SmoothDamp(Rb.velocity, _playerMovement.ReadValue<Vector2>() * Time.deltaTime * Speed, ref _velocity, .15f);
+
+                Animator.SetFloat("Speed", MathF.Abs( Rb.velocity.x) + MathF.Abs(Rb.velocity.y));
 
                 if(_playerMovement.ReadValue<Vector2>().x > 0)
                 {
@@ -170,8 +181,8 @@ public class PlayerControler : MonoBehaviour
             }
             else
             {
-                _rb.velocity = Vector2.zero;
-                Animator.SetFloat("Speed", MathF.Abs(_rb.velocity.x) + MathF.Abs(_rb.velocity.y));
+                Rb.velocity = Vector2.zero;
+                Animator.SetFloat("Speed", MathF.Abs(Rb.velocity.x) + MathF.Abs(Rb.velocity.y));
             }
 
 
@@ -183,14 +194,22 @@ public class PlayerControler : MonoBehaviour
     {
         while (true)
         {
-            float aimDirection = Vector3.Angle(new Vector3(0f, 1f, 0f), PlayerAim.ReadValue<Vector2>());
-
+            float aimDirection = Vector3.Angle(new Vector3(0f, 1f, 0f), new Vector2(PlayerAim.ReadValue<Vector2>().x, PlayerAim.ReadValue<Vector2>().y));
+            _joyStickLastPosition = PlayerAim.ReadValue<Vector2>().x;
             if (PlayerAim.ReadValue<Vector2>().x > 0.0f)
             {
                 aimDirection = -aimDirection;
                 aimDirection = aimDirection + 360;
             }
 
+            if(aimDirection > 180)
+            {
+                aimDirection = Mathf.Clamp(aimDirection, 225, 315);
+            }
+            else
+            {
+                aimDirection = Mathf.Clamp(aimDirection, 45, 135);
+            }
             _aimPoint.rotation = Quaternion.Euler(0f, 0f, aimDirection);
 
             yield return null;

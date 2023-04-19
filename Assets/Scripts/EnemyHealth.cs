@@ -40,7 +40,10 @@ public class EnemyHealth : MonoBehaviour, IShootableEnemy
 
         Debug.Log("Damage after" + _hp);
         StartCoroutine(KnockBackRoutine());
-        _rb.velocity = (hitDirection * (knockBackForce - _knockBackResistance));
+        if(_enemyAI.EnemyState != EnemyAI.ENEMYSTATE.KNOCBACK)
+        {
+            _rb.velocity = (hitDirection * (knockBackForce - _knockBackResistance));
+        }
     }
 
 

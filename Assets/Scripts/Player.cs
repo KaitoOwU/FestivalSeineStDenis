@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class Player : MonoBehaviour
 
     private PlayerManager _playerManager;
     private PlayerControler _playerControler;
+    private PlayerHealth _playerHealth;
 
     [SerializeField] private GameObject _chara1;
     [SerializeField] private GameObject _chara2;
@@ -29,6 +32,12 @@ public class Player : MonoBehaviour
 
     [SerializeField] private int _maxAmmo;
 
+    // Health
+    [SerializeField] private Slider _layer1SliderP1;
+    [SerializeField] private Slider _layer2SliderP1;
+    [SerializeField] private Animator _healthBarAnimatorP1;
+
+
     [Header("player 2 stats")]
 
     [SerializeField] private float _speed2;
@@ -39,6 +48,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float _shootRange2;
 
     [SerializeField] private int _maxAmmo2;
+
+    //Health
+    [SerializeField] private Slider _layer1SliderP2;
+    [SerializeField] private Slider _layer2SliderP2;
+    [SerializeField] private Animator _healthBarAnimatorP2;
 
     private Player1ShootBehaviour _shootComponent;
 
@@ -51,6 +65,7 @@ public class Player : MonoBehaviour
     {
         _shootComponent = GetComponent<Player1ShootBehaviour>();
         _playerControler = GetComponent<PlayerControler>();
+        _playerHealth = GetComponent<PlayerHealth>();
 
         _playerManager = PlayerManager.instance;
         transform.parent = _playerManager.transform;
@@ -74,7 +89,9 @@ public class Player : MonoBehaviour
             _shootComponent.MaxAmmo = _maxAmmo;
 
             _shootComponent.Animator = _p1Animatior;
-            _shootComponent.ReloadAnimation = _p1AnimationClip;
+            _shootComponent.ReloadTime = _p1AnimationClip.length;
+
+            
         }
         else
         {
@@ -86,8 +103,13 @@ public class Player : MonoBehaviour
             _shootComponent.MaxAmmo = _maxAmmo2;
 
             _shootComponent.Animator = _p2Animatior;
-            _shootComponent.ReloadAnimation = _p2AnimationClip;
+            _shootComponent.ReloadTime = _p2AnimationClip.length + 0.2f;
+
         }
 
+        
+
+
     }
+
 }

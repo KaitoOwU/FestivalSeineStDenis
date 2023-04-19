@@ -42,7 +42,7 @@ public class EnemyAI : MonoBehaviour
     private Coroutine AttackCoolDownRoutine;
 
     public ENEMYSTATE EnemyState { get => _enemyState; set => _enemyState = value; }
-    public Coroutine AttackRoutine1 { get => AttackRoutine; set => AttackRoutine = value; }
+    public Coroutine FollowRoutine1 { get => FollowRoutine; set => FollowRoutine = value; }
 
     private void Start()
     {
@@ -69,10 +69,10 @@ public class EnemyAI : MonoBehaviour
     {
         _pause = true;
         _rb.velocity = Vector3.zero;
-        if(FollowRoutine != null)
+        if(FollowRoutine1 != null)
         {
-            StopCoroutine(FollowRoutine);
-            FollowRoutine = null;
+            StopCoroutine(FollowRoutine1);
+            FollowRoutine1 = null;
         }
 
         if (PathRoutine != null)
@@ -95,9 +95,9 @@ public class EnemyAI : MonoBehaviour
             return;
 
         Collider2D target = Physics2D.OverlapCircle(transform.position, _detectionSize, _detectionLayer);
-        if(target != null && FollowRoutine == null && _enemyState != ENEMYSTATE.ATTACKING)
+        if(target != null && FollowRoutine1 == null && _enemyState != ENEMYSTATE.ATTACKING)
         {
-            FollowRoutine = StartCoroutine(EnemyFollowRoutine(target.transform));
+            FollowRoutine1 = StartCoroutine(EnemyFollowRoutine(target.transform));
         }
     }
 
@@ -128,7 +128,7 @@ public class EnemyAI : MonoBehaviour
             if(_path == null || _currentWayPoint >= _path.vectorPath.Count)
             {
                 _recheadEndOfPath = true;
-                FollowRoutine = null;
+                FollowRoutine1 = null;
                 _rb.velocity = Vector2.zero;
                 _enemyState = ENEMYSTATE.IDLE;
                 yield break;
@@ -154,10 +154,10 @@ public class EnemyAI : MonoBehaviour
 
             if (hit != null)
             {
-                AttackRoutine1 = StartCoroutine(EnemyAttackRoutine());
+                AttackRoutine = StartCoroutine(EnemyAttackRoutine());
                 EnemyState = ENEMYSTATE.ATTACKING;
 
-                FollowRoutine = null;
+                FollowRoutine1 = null;
                 yield break;
             }
 
@@ -176,7 +176,6 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator EnemyAttackRoutine()
     {
         _rb.velocity = Vector2.zero;
-        Debug.Log("ppppppp");
         while (true)
         {
             if(AttackCoolDownRoutine == null)
@@ -191,7 +190,7 @@ public class EnemyAI : MonoBehaviour
             if(hit == null)
             {
                 _enemyState = ENEMYSTATE.IDLE;
-                AttackRoutine1 = null;
+                AttackRoutine = null;
                 yield break;
             }
             yield return null;

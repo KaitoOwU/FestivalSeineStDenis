@@ -16,6 +16,9 @@ public class Player1ShootBehaviour : MonoBehaviour
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private Transform _playerGfx;
 
+    [SerializeField] private float _kockBack;
+    [SerializeField] private float _damage;
+
 
     private float _shootInterval;
     private float _shootRange;
@@ -45,9 +48,10 @@ public class Player1ShootBehaviour : MonoBehaviour
     public float ShootInterval { get => _shootInterval; set => _shootInterval = value; }
     public float ShootRange { get => _shootRange; set => _shootRange = value; }
     public int MaxAmmo { get => _maxAmmo; set => _maxAmmo = value; }
-    public float ReloadTime { get => _reloadTime; set => _reloadTime = value; }
     public Animator Animator { get => _animator; set => _animator = value; }
     public AnimationClip ReloadAnimation { get => _reloadAnimation; set => _reloadAnimation = value; }
+    public float ReloadTime { get => _reloadTime; set => _reloadTime = value; }
+    public Coroutine ShootRoutine1 { get => ShootRoutine; set => ShootRoutine = value; }
 
     private void Start()
     {
@@ -108,23 +112,23 @@ public class Player1ShootBehaviour : MonoBehaviour
 
     private void Shoot()
     {
-        if(ShootRoutine == null)
+        if(ShootRoutine1 == null)
         {
-            ShootRoutine = StartCoroutine(PlayerShootRoutine());
+            ShootRoutine1 = StartCoroutine(PlayerShootRoutine());
         }
     }
 
     private void StopShoot()
     {
-        if(ShootRoutine != null)
+        if(ShootRoutine1 != null)
         {
             Animator.SetBool("IsFire", false);
             if (ShootState != SHOOTSTATE.Reload)
             {
                 ShootState = SHOOTSTATE.None;
             }
-            StopCoroutine(ShootRoutine);
-            ShootRoutine = null;
+            StopCoroutine(ShootRoutine1);
+            ShootRoutine1 = null;
         }
     }
 
@@ -139,19 +143,20 @@ public class Player1ShootBehaviour : MonoBehaviour
         ShootState = SHOOTSTATE.Shooting;
         while (true)
         {
-            while(_currentAmmo <= 0)
+            while(_currentAmmo <= 0 || ReloadRoutine != null)
             {
                 Animator.SetBool("IsFire", false);
                 ReloadRoutine = StartCoroutine(ShootReloadRoutine());
                 yield return new WaitUntil( () => _currentAmmo == MaxAmmo);
                 Animator.SetBool("IsFire", true);
             }
+            _playerControler.Rb.velocity = Vector2.zero;
             //Debug.Log(_shootPoint.eulerAngles.z);
-            if (_playerControler.PlayerAim.ReadValue<Vector2>().x < 0)
+            if (_playerControler.JoyStickLastPosition < 0)
             {
                 _playerGfx.eulerAngles = new Vector3(_playerGfx.eulerAngles.x, 180, _playerGfx.eulerAngles.z);
             }
-            else if (_playerControler.PlayerAim.ReadValue<Vector2>().x > 0)
+            else if (_playerControler.JoyStickLastPosition > 0)
             {
                 _playerGfx.eulerAngles = new Vector3(_playerGfx.eulerAngles.x, 0, _playerGfx.eulerAngles.z);
             }
@@ -161,11 +166,9 @@ public class Player1ShootBehaviour : MonoBehaviour
 
             if (raycast.collider != null)
             {
-                raycast.collider.gameObject.GetComponent<IShootableEnemy>()?.Damage(10, 5, ( raycast.collider.transform.position - transform.position).normalized);
+                raycast.collider.gameObject.GetComponent<IShootableEnemy>()?.Damage(_damage, _kockBack, ( raycast.collider.transform.position - transform.position).normalized);
                 Debug.Log("Toucher");
             }
-
-
 
             _currentAmmo--;
             Debug.Log("Ammo: " + _currentAmmo);
@@ -188,7 +191,7 @@ public class Player1ShootBehaviour : MonoBehaviour
         Debug.Log("Reload");
         ShootState = SHOOTSTATE.Reload;
 
-        yield return new WaitForSeconds(ReloadAnimation.length);
+        yield return new WaitForSeconds(ReloadTime);
 
 
         _currentAmmo = MaxAmmo;
