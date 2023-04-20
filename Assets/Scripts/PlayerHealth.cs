@@ -1,16 +1,29 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IShootableEnemy, IHealable
 {
     [SerializeField] private float _playerMaxHealth;
+
+    [SerializeField] private Dialogue _p1Dead;
+    [SerializeField] private Dialogue _p2Dead;
+
+    [SerializeField] private GameObject _canvaDead;
+
+    [Scene]
+    [SerializeField] private int _daedScene;
+
     private float _playerHealth;
+    private bool isDead;
 
     private Slider _layer1Slider;
     private Slider _layer2Slider;
     private Animator _healthBarAnimator;
+    private Player _player;
 
     private Coroutine decreaseRoutine;
     private Coroutine increaseRoutine;
@@ -22,6 +35,7 @@ public class PlayerHealth : MonoBehaviour, IShootableEnemy, IHealable
     private void Start()
     {
         _playerHealth = _playerMaxHealth;
+        _player = GetComponent<Player>();
     }
 
     public void Damage(float damage, float knockBackForce, Vector2 hitDirection)
@@ -35,14 +49,37 @@ public class PlayerHealth : MonoBehaviour, IShootableEnemy, IHealable
             decreaseRoutine = StartCoroutine(DecreaseLifeRoutine());
         }
 
-        if(_playerHealth < 0)
+        if(_playerHealth < 0 && !isDead)
         {
+            isDead = true;
             _layer1Slider.gameObject.SetActive(false);
             _layer2Slider.gameObject.SetActive(false);
+
+            if(_player.PlayerType == Player.PLAYER.PLAYER1)
+            {
+                DialogueManager.instance.QueueDialogue(_p1Dead);
+            }
+            else
+            {
+                DialogueManager.instance.QueueDialogue(_p2Dead);
+            }
+            StartCoroutine(WaitCanva());
             Debug.Log("t'es mort");
         }
     }
-
+    private IEnumerator WaitCanva()
+    {
+        while (true)
+        {
+            if(DialogueManager.instance.DialogueCanva.activeSelf == false)
+            {
+                SceneManager.LoadScene(_daedScene);
+                GameManager.instance.OnGamePause?.Invoke();
+                GameManager.instance.OpenMenuScene();
+            }
+            yield return null;
+        }
+    }
     private IEnumerator DecreaseLifeRoutine()
     {
         yield return new WaitForSeconds(0.75f);

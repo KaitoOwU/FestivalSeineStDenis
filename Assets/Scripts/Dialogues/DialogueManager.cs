@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     private bool _skip;
 
     public bool Skip { get => _skip; set => _skip = value; }
+    public GameObject DialogueCanva { get => _dialogueCanva; set => _dialogueCanva = value; }
 
     private void Awake()
     {
@@ -34,8 +35,8 @@ public class DialogueManager : MonoBehaviour
             instance = this;
         }
 
-        OnDialogueStart += () => _dialogueCanva.SetActive(true);
-        OnDialogueEnd += () => _dialogueCanva.SetActive(false);
+        OnDialogueStart += () => DialogueCanva.SetActive(true);
+        OnDialogueEnd += () => DialogueCanva.SetActive(false);
     }
     private void Start()
     {

@@ -384,6 +384,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerMaxHealth: 100
+  _p1Dead: {fileID: 11400000, guid: 30da4ab5d17ca024ab76da9f6a262086, type: 2}
+  _p2Dead: {fileID: 11400000, guid: 02010f21c782280409adcdf56edc88d6, type: 2}
+  _canvaDead: {fileID: 0}
+  _daedScene: 3
 --- !u!1001 &2205951854582956115
 PrefabInstance:
   m_ObjectHideFlags: 0

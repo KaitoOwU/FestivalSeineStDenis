@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 public class TriggerArea : MonoBehaviour
@@ -21,6 +22,10 @@ public class TriggerArea : MonoBehaviour
     [SerializeField] private BoxCollider2D _collider;
 
     [SerializeField] private LayerMask _layer;
+    [SerializeField] private bool _isFinalDialogue;
+
+    [Scene]
+    [SerializeField] private int _winScene;
 
 
     //private void Start()
@@ -60,20 +65,27 @@ public class TriggerArea : MonoBehaviour
 
     IEnumerator WaitEndOfDialogue()
     {
+        yield return new WaitForSeconds(0.1f);
         while (true)
         {
             Debug.Log(DialogueManager.instance._dialogueQueue.Count);
             yield return null;
-            if(DialogueManager.instance._dialogueQueue.Count == 0)
+            if(DialogueManager.instance.DialogueCanva.activeSelf == false)
             {
                 OnAreaExit?.Invoke();
                 _collider.enabled = false;
                 _isExited = true;
 
+                if (_isFinalDialogue)
+                {
+                    SceneManager.LoadScene(_winScene);
+                }
+
                 if(_entityToSpawn != null)
                 {
                     foreach(GameObject go in _entityToSpawn)
                     {
+                        Debug.Log(go.name);
                         go.SetActive(true);
                     }
                 }

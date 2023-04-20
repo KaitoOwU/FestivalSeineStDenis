@@ -53,10 +53,14 @@ MonoBehaviour:
       m_Calls: []
   _topRight: {x: 0, y: 0}
   _botleft: {x: 0, y: 0}
+  _entityToSpawn: []
+  _entityKill: []
   _collider: {fileID: 6428305204685105649}
   _layer:
     serializedVersion: 2
     m_Bits: 64
+  _isFinalDialogue: 0
+  _winScene: 2
 --- !u!1 &4666838224460028526
 GameObject:
   m_ObjectHideFlags: 0
