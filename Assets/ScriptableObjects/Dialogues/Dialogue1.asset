@@ -14,24 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines:
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "Menace momentan\xE9ment \xE9cart\xE9e, r\xE9flexion \xE0 la suite du
       plan d\u2019action..."
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "Analyse de l\u2019environnement\u2026 \nLocalisation actuelle : Plan\xE8te
       Bi0m3k-406..."
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 3
+    _emotion: 2
     _line: " Bi0m3k-406, plan\xE8te connue pour ses r\xE9sidents hostiles et mortels,
       entit\xE9s robotiques aux capacit\xE9s de r\xE9g\xE9n\xE9ration anormalement
       d\xE9velopp\xE9es."
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "Rester statiques r\xE9duit drastiquement nos chances de survie, soldat
       le meilleur plan d\u2019action reste l\u2019exploration."
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "L\u2019union fait la force, strat\xE9gie optimale : restons proches et
       \xE9voluons \xE0 la recherche d\u2019\xE9l\xE9ments pouvant accroitre nos chances
       de survie."

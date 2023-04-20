@@ -17,7 +17,7 @@ MonoBehaviour:
     _emotion: 0
     _line: "Soldat CL-4\u2026"
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: 'Oui CL-7 ? '
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
     _emotion: 0
@@ -27,12 +27,12 @@ MonoBehaviour:
     _emotion: 0
     _line: 'Merci CL-7, vos techniques de combat sont un plaisir pour les yeux ! '
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 5
     _line: ... !
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 3
     _line: "La source d'\xE9nergie est tout proche, qu\u2019allons-nous d\xE9couvrir...
       ? J'en frissonne\r !\nNous devons en avoir le c\u0153ur net\r.\n"
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 5
     _line: "O\u2026Oui, avan\xE7ons\u2026\n"

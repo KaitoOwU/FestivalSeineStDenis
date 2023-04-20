@@ -14,32 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines:
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 3
     _line: "Voil\xE0 la chose qui troublait mes capteurs ! Mais qu\u2019est-ce que
       c\u2019est ?! "
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "Analyse encyclop\xE9dique m\xE9morielle\u2026"
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
     _emotion: 0
     _line: "1 r\xE9sultat trouv\xE9 : R\xE9g\xE9n\xE9ralys."
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 3
     _line: "R\xE9g\xE9n\xE9ralys ? De quoi s\u2019agit-il CL-7 ?"
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 3
     _line: "Un v\xE9g\xE9tal natif de Bi0m3k-406\u2026 La s\xE8ve abondante de cette
       plante a la capacit\xE9 de r\xE9g\xE9n\xE9rer les circuits \xE9lectriques et
       m\xE9caniques ! Mais alors\u2026 !"
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 5
     _line: "Nous pourrions nous en servir pour r\xE9parer le vaisseau ?!"
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
     _emotion: 0
-    _line: "C\u2019est \xE9vidant ! Retournons au point d\u2019impact et quittons
+    _line: "C\u2019est \xE9vident ! Retournons au point d\u2019impact et quittons
       cette maudite plan\xE8te\u2026"
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 2
     _line: "Les cr\xE9atures locales se montreront encore plus hostiles en nous voyant
       d\xE9rober leur source de vitalit\xE9\u2026 alors ne perdons pas un instant
       et d\xE9guerpissons !"

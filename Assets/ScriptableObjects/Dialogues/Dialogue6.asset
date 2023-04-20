@@ -17,7 +17,7 @@ MonoBehaviour:
     _emotion: 0
     _line: CL-7.
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 3
     _line: CL-4 ?
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 0
@@ -28,5 +28,5 @@ MonoBehaviour:
     _line: "Nous formons une bonne \xE9quipe CL-4, c\u2019est un plaisir de m\u2019\xEAtre
       \xE9cras\xE9 sur cette plan\xE8te avec toi."
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 5
     _line: Haha, tout le plaisir est pour moi !

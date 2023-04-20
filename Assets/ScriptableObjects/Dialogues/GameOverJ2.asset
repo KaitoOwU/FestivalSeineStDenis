@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines:
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "Humf\u2026 signes vitaux\u2026 de plus en plus faibles....\nTout s\u2019assombrit\u2026 "
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 1
     _line: "Chances de survie\u2026 nulles\u2026"

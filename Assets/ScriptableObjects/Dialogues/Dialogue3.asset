@@ -17,13 +17,13 @@ MonoBehaviour:
     _emotion: 0
     _line: "La voie est libre, pour l\u2019instant\u2026"
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "Ces cr\xE9atures sont acharn\xE9es et forcen\xE9es, leur vitalit\xE9
       est surnaturelle, mes capteurs sont formels."
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 0
     _line: "La source d\u2019\xE9nergie n\u2019est plus tr\xE8s loin, notre seul
-      choix est d\u2019avancer CL-7"
+      choix est d\u2019avancer CL-7."
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
     _emotion: 3
     _line: "... ! Tr\xE8s bien soldat\u2026 avan\xE7ons."

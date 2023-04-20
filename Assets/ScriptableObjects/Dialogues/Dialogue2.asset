@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines:
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 3
     _line: "Mes capteurs sensoriels d\xE9tectent une source d\u2019\xE9nergie non
       loin, suggestion : en chercher l\u2019origine."
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "Il s\u2019agit bien de notre seule piste, mais nos chances de survie
       r\xE9duisent \xE0 vue d\u2019\u0153il, dangerosit\xE9 de l\u2019exp\xE9dition
       : en constante augmentation..."
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "La population locale semble en effet r\xE9agir \xE0 notre progression,
       c\u2019est une embuscade, soldat pr\xE9parez-vous a combattre !"
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 2
     _line: "Armement pr\xEAt, qu\u2019ils viennent\u2026"
