@@ -94,8 +94,11 @@ public class DialogueManager : MonoBehaviour
             case DialogueLine.Emotion.Surprised:
                 return character._surprisedSprite;
 
-            case DialogueLine.Emotion.Fear:
-                return character._fearSprite;
+            case DialogueLine.Emotion.Neutral:
+                return character._neutralSprite;
+
+            case DialogueLine.Emotion.Flushed:
+                return character._flushedSprite;
         }
         return null;
     }

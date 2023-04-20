@@ -11,7 +11,8 @@ public class DialogueLine
         Sad,
         Angry,
         Surprised,
-        Fear,
+        Neutral,
+        Flushed
         
     }
 

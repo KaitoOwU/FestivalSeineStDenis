@@ -13,6 +13,7 @@ public class TriggerArea : MonoBehaviour
     [SerializeField] private Vector2 _botleft;
 
     [SerializeField] private GameObject[] _entityToSpawn;
+    [SerializeField] private GameObject[] _entityKill;
 
     private bool _isEntered;
     private bool _isExited;
@@ -35,7 +36,7 @@ public class TriggerArea : MonoBehaviour
 
         Collider2D[] numPlayer = Physics2D.OverlapAreaAll(new Vector2(transform.position.x, transform.position.y) + _topRight, new Vector2(transform.position.x, transform.position.y) + _botleft, _layer);
 
-        if(!_isEntered && numPlayer.Length >= 2)
+        if(!_isEntered && numPlayer.Length >= 2 && _entityKill.Length == 0)
         {
             _isEntered = true;
             OnAreaEnter?.Invoke();
