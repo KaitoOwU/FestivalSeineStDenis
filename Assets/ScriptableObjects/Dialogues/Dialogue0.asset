@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa149bbcdd43644f9c21d55cffe142b, type: 3}
+  m_Name: Dialogue0
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 2
+    _line: "*Grogne*  Humf\u2026 Atmosph\xE8re : respirable ; temp\xE9rature : supportable
+      ; population locale : potentiellement hostile\u2026"
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: "Unit\xE9 CL-7 au rapport, soldat veuillez d\xE9cliner votre matricule
+      !"
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: "Un autre survivant\u2026 chances de survie l\xE9g\xE8rement accrues ;
+      CL-4 au rapport."
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 2
+    _line: "D\xE9bout soldat, prenez les armes. Le crash semble avoir attir\xE9 des
+      cr\xE9atures agressives !"
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 2
+    _line: "S\xE9curisation de la zone pr\xE9alable avant la mise en place d\u2019une
+      strat\xE9gie, ennemis en approche !"

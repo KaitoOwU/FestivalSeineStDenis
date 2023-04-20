@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa149bbcdd43644f9c21d55cffe142b, type: 3}
+  m_Name: Dialogue10_Fin
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: "On a r\xE9ussi, 4 !"
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: 'Bravo, 7 ! '
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: "J\u2019ai toujours su qu\u2019on y arriverait\r.\nTant qu\u2019on sera
+      ensemble, rien ne pourra nous \xE9branler !\r\n"
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: "Le vaisseau est r\xE9par\xE9, et maintenant... On a plus qu\u2019\xE0
+      devenir maitres de nos propres destins."
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: "Qu\u2019est-ce que tu veux faire ? O\xF9 veux tu aller ? "
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: "Une plan\xE8te paradisiaque ? Une galaxie qui ne demande qu\u2019\xE0
+      \xEAtre explor\xE9e ? "
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: "Peut m\u2019importe, j\u2019irai partout, tant que tu seras l\xE0..."
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: ... !
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: Prenons notre envol, et laissons les courants spatiaux nous guider !
