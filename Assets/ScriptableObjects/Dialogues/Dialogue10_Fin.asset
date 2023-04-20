@@ -24,21 +24,21 @@ MonoBehaviour:
     _line: "J\u2019ai toujours su qu\u2019on y arriverait\r.\nTant qu\u2019on sera
       ensemble, rien ne pourra nous \xE9branler !\r\n"
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 3
     _line: "Le vaisseau est r\xE9par\xE9, et maintenant... On a plus qu\u2019\xE0
       devenir maitres de nos propres destins."
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 0
     _line: "Qu\u2019est-ce que tu veux faire ? O\xF9 veux tu aller ? "
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 3
     _line: "Une plan\xE8te paradisiaque ? Une galaxie qui ne demande qu\u2019\xE0
       \xEAtre explor\xE9e ? "
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
     _emotion: 0
     _line: "Peut m\u2019importe, j\u2019irai partout, tant que tu seras l\xE0..."
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
-    _emotion: 0
+    _emotion: 5
     _line: ... !
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 0

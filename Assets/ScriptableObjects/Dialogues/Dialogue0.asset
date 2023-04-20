@@ -18,7 +18,7 @@ MonoBehaviour:
     _line: "*Grogne*  Humf\u2026 Atmosph\xE8re : respirable ; temp\xE9rature : supportable
       ; population locale : potentiellement hostile\u2026"
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
-    _emotion: 0
+    _emotion: 4
     _line: "Unit\xE9 CL-7 au rapport, soldat veuillez d\xE9cliner votre matricule
       !"
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}

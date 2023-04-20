@@ -15,7 +15,7 @@ MonoBehaviour:
   _lines:
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 0
-    _line: "\xC7a y est, on est invincibles !"
+    _line: Nous sommes invincibles !
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
     _emotion: 0
     _line: "De vrais fr\xE8res d\u2019arme, plus rien ne peut nous arr\xEAter !"
@@ -29,7 +29,7 @@ MonoBehaviour:
       de notre c\xF4t\xE9\u2026"
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 1
-    _line: "\u2026"
+    _line: ...
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 1
     _line: "T\xE2chons d\xE9j\xE0 de rejoindre le vaisseau, on avisera apr\xE8s\u2026"
