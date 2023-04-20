@@ -48,7 +48,7 @@ MonoBehaviour:
     _line: "Un nouveau d\xE9part, juste nous 2, entre fr\xE8res d\u2019armes\u2026"
   - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
     _emotion: 0
-    _line: "Encore des autochtones ! Et le vaisseau est juste l\xE0 !"
+    _line: Encore des autochtones ! Finissons le travail !
   - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
     _emotion: 0
     _line: "C\u2019est l\u2019heure de notre dernier combat !"
