@@ -15,6 +15,7 @@ public class Player1ShootBehaviour : MonoBehaviour
     private SHOOTSTATE _shootState = SHOOTSTATE.None;
 
     [SerializeField] private Transform _shootPoint;
+    [SerializeField] private Transform _shootPointLaser;
     [SerializeField] private Transform _playerGfx;
 
     private float _kockBack;
@@ -31,6 +32,9 @@ public class Player1ShootBehaviour : MonoBehaviour
 
     private Animator _animator;
     private AnimationClip _reloadAnimation;
+    private Player _player;
+
+    private LineRenderer _laser;
 
     [SerializeField] private LayerMask _enemyLayer;
 
@@ -65,9 +69,11 @@ public class Player1ShootBehaviour : MonoBehaviour
     public ParticleSystem ReloadParticules { get => _reloadParticules; set => _reloadParticules = value; }
     public float KockBack { get => _kockBack; set => _kockBack = value; }
     public float Damage { get => _damage; set => _damage = value; }
+    public LineRenderer Laser { get => _laser; set => _laser = value; }
 
     private void Start()
     {
+        _player = GetComponent<Player>();
         _playerControler = GetComponent<PlayerControler>();
         _inputActions = GetComponent<PlayerInput>();
         ShootInput = _inputActions.actions["fire"];
@@ -135,6 +141,11 @@ public class Player1ShootBehaviour : MonoBehaviour
     {
         if(ShootRoutine1 != null)
         {
+            if (_player.PlayerType == Player.PLAYER.PLAYER1)
+            {
+                _laser.gameObject.SetActive(false);
+            }
+
             OnStopShoot?.Invoke();
             Animator.SetBool("IsFire", false);
             if (ShootState != SHOOTSTATE.Reload)
@@ -155,6 +166,10 @@ public class Player1ShootBehaviour : MonoBehaviour
         }
 
         ShootState = SHOOTSTATE.Shooting;
+        if (_player.PlayerType == Player.PLAYER.PLAYER1)
+        {
+            _laser.gameObject.SetActive(true);
+        }
         while (true)
         {
             while(_currentAmmo <= 0 || ReloadRoutine != null)
@@ -178,6 +193,15 @@ public class Player1ShootBehaviour : MonoBehaviour
             RaycastHit2D raycast = Physics2D.Raycast(transform.position, _shootPoint.up, ShootRange, _enemyLayer);
             Debug.DrawRay(transform.position, _shootPoint.up * ShootRange, Color.red, 0.5f);
 
+
+            if(raycast.collider != null && _player.PlayerType == Player.PLAYER.PLAYER1)
+            {
+                DrawLaser(_shootPointLaser.position, raycast.point);
+            }
+            else if(_player.PlayerType == Player.PLAYER.PLAYER1)
+            {
+                DrawLaser(transform.position + _shootPoint.up * 1.5f, _shootPoint.up * ShootRange);
+            }
             OnShoot?.Invoke();
 
             if (raycast.collider != null)
@@ -194,6 +218,12 @@ public class Player1ShootBehaviour : MonoBehaviour
 
 
         }
+    }
+
+    private void DrawLaser(Vector2 startPos, Vector2 endPos)
+    {
+        _laser.SetPosition(0, startPos);
+        _laser.SetPosition(1, endPos);
     }
 
     private IEnumerator ShootCoolDownRoutine()

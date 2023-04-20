@@ -34,9 +34,17 @@ public class TriggerArea : MonoBehaviour
         if (_isExited)
             return;
 
+
+        foreach(GameObject go in _entityKill)
+        {
+            if(go != null)
+            {
+                return;
+            }
+        }
         Collider2D[] numPlayer = Physics2D.OverlapAreaAll(new Vector2(transform.position.x, transform.position.y) + _topRight, new Vector2(transform.position.x, transform.position.y) + _botleft, _layer);
 
-        if(!_isEntered && numPlayer.Length >= 2 && _entityKill.Length == 0)
+        if(!_isEntered && numPlayer.Length >= 2)
         {
             _isEntered = true;
             OnAreaEnter?.Invoke();

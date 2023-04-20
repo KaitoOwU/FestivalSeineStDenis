@@ -14,6 +14,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] private PLAYER playerType;
 
+    public Player(PLAYER playerType)
+    {
+        this.playerType = playerType;
+    }
+
     private PlayerManager _playerManager;
     private PlayerControler _playerControler;
     private PlayerHealth _playerHealth;
@@ -46,6 +51,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _knockBackP1;
     [SerializeField] private float _damageP1;
+
+    [SerializeField] private LineRenderer _laser;
 
 
     [Header("player 2 stats")]
@@ -117,6 +124,8 @@ public class Player : MonoBehaviour
             _shootComponent.OnShoot += ShootParticuleP1;
             _shootComponent.OnStartReload += ReloadParticuleP1;
             _shootComponent.OnStopReload += StopReloadParticuleP1;
+
+            _shootComponent.Laser = _laser;
         }
         else
         {
