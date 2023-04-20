@@ -8,6 +8,8 @@ using System;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager instance;
+
     public event Action OnDialogueStart;
     public event Action OnDialogueEnd;
 
@@ -18,7 +20,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _characterLine;
     [SerializeField] private TextMeshProUGUI _characterName;
 
-    private Queue _dialogueQueue = new Queue();
+    public Queue _dialogueQueue = new Queue();
     private Coroutine _dialogueRoutine;
 
     private bool _skip;
@@ -27,6 +29,11 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+
         OnDialogueStart += () => _dialogueCanva.SetActive(true);
         OnDialogueEnd += () => _dialogueCanva.SetActive(false);
     }

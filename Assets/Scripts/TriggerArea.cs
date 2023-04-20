@@ -12,8 +12,12 @@ public class TriggerArea : MonoBehaviour
     [SerializeField] private Vector2 _topRight;
     [SerializeField] private Vector2 _botleft;
 
+    [SerializeField] private GameObject[] _entityToSpawn;
+
     private bool _isEntered;
     private bool _isExited;
+
+    [SerializeField] private BoxCollider2D _collider;
 
     [SerializeField] private LayerMask _layer;
 
@@ -35,18 +39,39 @@ public class TriggerArea : MonoBehaviour
         {
             _isEntered = true;
             OnAreaEnter?.Invoke();
-        }
-        else if(_isEntered && !_isExited && numPlayer.Length < 2)
-        {
-            OnAreaExit?.Invoke();
-            _isExited = true;
+            StartCoroutine(WaitEndOfDialogue());
         }
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.yellow;
         CustomDebug.DrawRectange(new Vector2(transform.position.x, transform.position.y) + _topRight, new Vector2(transform.position.x, transform.position.y) + _botleft);
+    }
+
+    IEnumerator WaitEndOfDialogue()
+    {
+        while (true)
+        {
+            Debug.Log(DialogueManager.instance._dialogueQueue.Count);
+            yield return null;
+            if(DialogueManager.instance._dialogueQueue.Count == 0)
+            {
+                OnAreaExit?.Invoke();
+                _collider.enabled = false;
+                _isExited = true;
+
+                if(_entityToSpawn != null)
+                {
+                    foreach(GameObject go in _entityToSpawn)
+                    {
+                        go.SetActive(true);
+                    }
+                }
+                yield break;
+            }
+
+        }
     }
 
     public void Porut()
