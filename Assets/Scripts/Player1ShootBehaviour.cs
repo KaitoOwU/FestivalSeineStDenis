@@ -17,8 +17,8 @@ public class Player1ShootBehaviour : MonoBehaviour
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private Transform _playerGfx;
 
-    [SerializeField] private float _kockBack;
-    [SerializeField] private float _damage;
+    private float _kockBack;
+    private float _damage;
 
 
     private float _shootInterval;
@@ -51,6 +51,7 @@ public class Player1ShootBehaviour : MonoBehaviour
     public Action OnStopReload;
 
     public Action OnShoot;
+    public Action OnStopShoot;
 
     public SHOOTSTATE ShootState { get => _shootState; set => _shootState = value; }
     public InputAction ShootInput { get => _shootInput; set => _shootInput = value; }
@@ -62,6 +63,8 @@ public class Player1ShootBehaviour : MonoBehaviour
     public float ReloadTime { get => _reloadTime; set => _reloadTime = value; }
     public Coroutine ShootRoutine1 { get => ShootRoutine; set => ShootRoutine = value; }
     public ParticleSystem ReloadParticules { get => _reloadParticules; set => _reloadParticules = value; }
+    public float KockBack { get => _kockBack; set => _kockBack = value; }
+    public float Damage { get => _damage; set => _damage = value; }
 
     private void Start()
     {
@@ -132,6 +135,7 @@ public class Player1ShootBehaviour : MonoBehaviour
     {
         if(ShootRoutine1 != null)
         {
+            OnStopShoot?.Invoke();
             Animator.SetBool("IsFire", false);
             if (ShootState != SHOOTSTATE.Reload)
             {
@@ -178,12 +182,13 @@ public class Player1ShootBehaviour : MonoBehaviour
 
             if (raycast.collider != null)
             {
-                raycast.collider.gameObject.GetComponent<IShootableEnemy>()?.Damage(_damage, _kockBack, ( raycast.collider.transform.position - transform.position).normalized);
+                raycast.collider.gameObject.GetComponent<IShootableEnemy>()?.Damage(Damage, KockBack, ( raycast.collider.transform.position - transform.position).normalized);
                 Debug.Log("Toucher");
+                Debug.Log("KB" + KockBack);
             }
 
             _currentAmmo--;
-            Debug.Log("Ammo: " + _currentAmmo);
+            //Debug.Log("Ammo: " + _currentAmmo);
             CoolDownRoutine = StartCoroutine(ShootCoolDownRoutine());
             yield return new WaitUntil( () => CoolDownRoutine == null);
 

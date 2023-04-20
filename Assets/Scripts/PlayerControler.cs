@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using static Player;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using UnityEngine.InputSystem.Composites;
 
 public class PlayerControler : MonoBehaviour
 {

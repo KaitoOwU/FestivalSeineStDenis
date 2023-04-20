@@ -21,12 +21,16 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float _nextWayPointDistance;
     [SerializeField] private float _attackRate;
 
+    [SerializeField] private Animator _animator;
+
     private Path _path;
     private int _currentWayPoint;
     private bool _recheadEndOfPath;
 
     private bool _disable;
     private bool _pause;
+
+    private Transform _baseTransform;
 
     private Seeker _seeker;
     private Rigidbody2D _rb;
@@ -50,6 +54,7 @@ public class EnemyAI : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
 
         _rb.velocity = Vector3.zero;
+        _baseTransform = transform;
 
         GameManager.instance.OnDialogue += OnPause;
         GameManager.instance.OnGamePause += OnPause;
@@ -98,6 +103,18 @@ public class EnemyAI : MonoBehaviour
         if(target != null && FollowRoutine1 == null && _enemyState != ENEMYSTATE.ATTACKING)
         {
             FollowRoutine1 = StartCoroutine(EnemyFollowRoutine(target.transform));
+        }
+
+        if(EnemyState != ENEMYSTATE.KNOCBACK)
+        {
+            if (_rb.velocity.x >= 0.01f)
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+            }
+            else if (_rb.velocity.x <= -0.01f)
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, 180, transform.eulerAngles.z);
+            }
         }
     }
 
@@ -176,6 +193,7 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator EnemyAttackRoutine()
     {
         _rb.velocity = Vector2.zero;
+        _animator.SetBool("IsAttacking", true);
         while (true)
         {
             if(AttackCoolDownRoutine == null)
@@ -191,10 +209,12 @@ public class EnemyAI : MonoBehaviour
             {
                 _enemyState = ENEMYSTATE.IDLE;
                 AttackRoutine = null;
+                _animator.SetBool("IsAttacking", false);
                 yield break;
             }
             yield return null;
         }
+            
     }
 
     protected virtual void AttackLogic()
@@ -206,7 +226,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (_seeker.IsDone())
             _seeker.StartPath(transform.position, _target.position, OnPathComplete);
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.25f);
     }
 
     private IEnumerator AttackRoutineCoolDown()

@@ -42,6 +42,11 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem _reloadP1;
     [SerializeField] private ParticleSystem _shootP1;
 
+    // attack
+
+    [SerializeField] private float _knockBackP1;
+    [SerializeField] private float _damageP1;
+
 
     [Header("player 2 stats")]
 
@@ -64,6 +69,10 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem _reload2P2;
     [SerializeField] private ParticleSystem _shoot1P2;
     [SerializeField] private ParticleSystem _shoot2P2;
+
+    //attack
+    [SerializeField] private float _knockBackP2;
+    [SerializeField] private float _damageP2;
 
 
     private Player1ShootBehaviour _shootComponent;
@@ -102,6 +111,8 @@ public class Player : MonoBehaviour
 
             _shootComponent.Animator = _p1Animatior;
             _shootComponent.ReloadTime = _p1AnimationClip.length;
+            _shootComponent.KockBack = _knockBackP1;
+            _shootComponent.Damage = _damageP1;
 
             _shootComponent.OnShoot += ShootParticuleP1;
             _shootComponent.OnStartReload += ReloadParticuleP1;
@@ -118,10 +129,13 @@ public class Player : MonoBehaviour
 
             _shootComponent.Animator = _p2Animatior;
             _shootComponent.ReloadTime = _p2AnimationClip.length + 0.2f;
+            _shootComponent.KockBack = _knockBackP2;
+            _shootComponent.Damage = _damageP2;
 
             _shootComponent.OnShoot += ShootParticuleP2;
             _shootComponent.OnStartReload += ReloadParticuleP2;
             _shootComponent.OnStopReload += StopReloadParticuleP2;
+            _shootComponent.OnStopShoot += StopShootParticuleP2;
 
         }
     }
@@ -136,6 +150,12 @@ public class Player : MonoBehaviour
     {
         _shoot1P2.Play();
         _shoot2P2.Play();
+    }
+
+    private void StopShootParticuleP2()
+    {
+        _shoot1P2.Stop();
+        _shoot2P2.Stop();
     }
 
     private void ReloadParticuleP2()
