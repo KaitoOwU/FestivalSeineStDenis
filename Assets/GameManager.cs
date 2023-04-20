@@ -56,7 +56,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(_gameScene);
     }
 
-    public void OpenMenuScene() => SceneManager.LoadScene(_menuScene);
+    public void OpenMenuScene()
+    {
+        //SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("Tom"));
+        //SceneManager.MoveGameObjectToScene(PlayerManager.instance.gameObject, SceneManager.GetSceneByName("Tom"));
+        SceneManager.LoadScene(_menuScene);
+    }
     public void QuitGame() => Application.Quit();
 
 

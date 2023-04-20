@@ -34,7 +34,6 @@ public class DialogueManager : MonoBehaviour
     {
         //QueueDialogue(testDialogue);
         _dialogueNextButton.SetActive(false);
-        DontDestroyOnLoad(this);
         PlayerManager.instance.DialogueManager = this;
     }
 

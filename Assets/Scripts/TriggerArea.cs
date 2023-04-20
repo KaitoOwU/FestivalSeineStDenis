@@ -17,6 +17,13 @@ public class TriggerArea : MonoBehaviour
 
     [SerializeField] private LayerMask _layer;
 
+
+    //private void Start()
+    //{
+    //    Invoke("Prout", 1f);
+    //}
+
+    //private void Prout() => GameManager.instance.OpenMenuScene();
     private void Update()
     {
         if (_isExited)

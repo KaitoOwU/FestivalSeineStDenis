@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour, IShootableEnemy
 
     [SerializeField] private float _maxHp;
     [SerializeField] private float _knockBackResistance;
+    [SerializeField] private int _healDropValue;
+    [SerializeField] GameObject _healObject;
 
 
     public Action OnDamage;
@@ -51,6 +53,8 @@ public class EnemyHealth : MonoBehaviour, IShootableEnemy
     private void Death()
     {
         Destroy(gameObject);
+        GameObject heal = Instantiate(_healObject, transform.position, Quaternion.identity);
+        heal.GetComponent<HealComponentBehaviour>().HealValue = _healDropValue;
     }
 
     private IEnumerator KnockBackRoutine(Vector2 dir)
@@ -59,7 +63,7 @@ public class EnemyHealth : MonoBehaviour, IShootableEnemy
         _enemyAI.EnemyState = EnemyAI.ENEMYSTATE.KNOCBACK;
         yield return new WaitForSeconds(0.01f);
         _rb.velocity = dir;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.1f);
         _enemyAI.EnemyState = EnemyAI.ENEMYSTATE.IDLE;
         knockBackRoutine = null;
     }
