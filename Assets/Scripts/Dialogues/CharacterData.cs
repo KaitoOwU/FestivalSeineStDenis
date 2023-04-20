@@ -24,6 +24,7 @@ public class CharacterData : ScriptableObject
     public Sprite _sadSprite;
     public Sprite _angrySprite;
     public Sprite _surprisedSprite;
-    public Sprite _fearSprite;
+    public Sprite _neutralSprite;
+    public Sprite _flushedSprite;
 
 }

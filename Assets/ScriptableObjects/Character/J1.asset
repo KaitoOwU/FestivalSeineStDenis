@@ -15,8 +15,9 @@ MonoBehaviour:
   _gender: 0
   _name: CL-4
   _description: "Homme muscl\xE9 joueur 1"
-  _happySprite: {fileID: 21300000, guid: 570d7e74ad91d16409a1d311bd1b50f8, type: 3}
-  _sadSprite: {fileID: 21300000, guid: 538a7e0313058a84ab17484f8624a7d0, type: 3}
-  _angrySprite: {fileID: 21300000, guid: 766401c378fb03546b62cb8a6f4f110d, type: 3}
-  _surprisedSprite: {fileID: 21300000, guid: 091d64e8170a9324296b7fe0029f3cf3, type: 3}
-  _fearSprite: {fileID: 21300000, guid: d7a4fd5cd8fe88240816e7e2e2bc442c, type: 3}
+  _happySprite: {fileID: 1244553661, guid: 77256eec79d3ab4438f4ae8a5ad3c9c2, type: 3}
+  _sadSprite: {fileID: 1770454600, guid: 77256eec79d3ab4438f4ae8a5ad3c9c2, type: 3}
+  _angrySprite: {fileID: 1810651163, guid: 77256eec79d3ab4438f4ae8a5ad3c9c2, type: 3}
+  _surprisedSprite: {fileID: 1316302887, guid: 77256eec79d3ab4438f4ae8a5ad3c9c2, type: 3}
+  _neutralSprite: {fileID: 1512338315, guid: 77256eec79d3ab4438f4ae8a5ad3c9c2, type: 3}
+  _flushedSprite: {fileID: 1655775736, guid: 77256eec79d3ab4438f4ae8a5ad3c9c2, type: 3}
