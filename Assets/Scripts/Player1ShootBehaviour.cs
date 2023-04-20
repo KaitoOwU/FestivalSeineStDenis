@@ -114,6 +114,7 @@ public class Player1ShootBehaviour : MonoBehaviour
     {
         if(ReloadRoutine == null)
         {
+            _laser.gameObject.SetActive(false);
             ReloadRoutine = StartCoroutine(ShootReloadRoutine());
         }
     }
@@ -166,10 +167,6 @@ public class Player1ShootBehaviour : MonoBehaviour
         }
 
         ShootState = SHOOTSTATE.Shooting;
-        if (_player.PlayerType == Player.PLAYER.PLAYER1)
-        {
-            _laser.gameObject.SetActive(true);
-        }
         while (true)
         {
             while(_currentAmmo <= 0 || ReloadRoutine != null)
@@ -196,11 +193,14 @@ public class Player1ShootBehaviour : MonoBehaviour
 
             if(raycast.collider != null && _player.PlayerType == Player.PLAYER.PLAYER1)
             {
-                DrawLaser(_shootPointLaser.position, raycast.point);
+                _laser.gameObject.SetActive(true);
+                DrawLaser(_shootPoint.position, raycast.point);
             }
             else if(_player.PlayerType == Player.PLAYER.PLAYER1)
             {
-                DrawLaser(transform.position + _shootPoint.up * 1.5f, _shootPoint.up * ShootRange);
+                _laser.gameObject.SetActive(false);
+                //DrawLaser(_shootPoint.position, _shootPoint.up * ShootRange);
+                //Debug.Log("ssdsfsfdsfvwvdvds");
             }
             OnShoot?.Invoke();
 
