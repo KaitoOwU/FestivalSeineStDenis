@@ -229,6 +229,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4492906594597755390, guid: db34cc9e232fad84881c858b321ff0da, type: 3}
   m_PrefabInstance: {fileID: 2895798320435070502}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1618467393003666761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4492906593561459567, guid: db34cc9e232fad84881c858b321ff0da, type: 3}
+  m_PrefabInstance: {fileID: 2895798320435070502}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5047663366193905110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618467393003666761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ece92b3db27ef4c987c4ae807818aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3468350970317253282}
+        m_TargetAssemblyTypeName: EnemyShoot, ProjectAssembly
+        m_MethodName: AttackLogic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &4235128642274772852 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1362833896930689362, guid: db34cc9e232fad84881c858b321ff0da, type: 3}

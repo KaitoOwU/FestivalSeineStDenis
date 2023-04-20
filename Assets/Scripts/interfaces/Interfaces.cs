@@ -6,3 +6,8 @@ interface IShootableEnemy
 {
     void Damage(float damage, float knockBackForce, Vector2 hitDirection);
 }
+
+interface IHealable
+{
+    void Heal(float value);
+}

@@ -154,6 +154,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _bulletSpeed: 0
+  _damage: 10
 --- !u!1001 &759104214032185508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -228,6 +229,38 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 575899053, guid: 33bfd11b3157a494cb1165840761cb2c, type: 3}
   m_PrefabInstance: {fileID: 759104214032185508}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2310963260479451790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3069996536658709034, guid: 33bfd11b3157a494cb1165840761cb2c, type: 3}
+  m_PrefabInstance: {fileID: 759104214032185508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7643919387831354146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310963260479451790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ece92b3db27ef4c987c4ae807818aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3210541572764741148}
+        m_TargetAssemblyTypeName: EnemyCac, ProjectAssembly
+        m_MethodName: AttackLogic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &2310963260795587634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3069996536979059862, guid: 33bfd11b3157a494cb1165840761cb2c, type: 3}

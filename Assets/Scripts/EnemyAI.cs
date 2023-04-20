@@ -37,8 +37,8 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Detection")]
     [SerializeField] private float _detectionSize;
-    [SerializeField] private float _attackDetectionSize;
-    [SerializeField] private LayerMask _detectionLayer;
+    [SerializeField] protected float _attackDetectionSize;
+    [SerializeField] protected LayerMask _detectionLayer;
 
     private Coroutine FollowRoutine;
     private Coroutine PathRoutine;
@@ -209,7 +209,7 @@ public class EnemyAI : MonoBehaviour
             }
             yield return new WaitUntil(() => AttackCoolDownRoutine == null);
 
-            AttackLogic();
+            //AttackLogic();
 
             Collider2D hit = Physics2D.OverlapCircle(transform.position, _attackDetectionSize, _detectionLayer);
             if(hit == null)
@@ -224,7 +224,7 @@ public class EnemyAI : MonoBehaviour
             
     }
 
-    protected virtual void AttackLogic()
+    public virtual void AttackLogic()
     {
 
     }
