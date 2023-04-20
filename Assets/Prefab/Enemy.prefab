@@ -78,7 +78,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.15083128, y: 0.7267332}
+  m_Offset: {x: -0.1, y: 0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -105,6 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 100
   _knockBackResistance: 0
+  _healDropValue: 10
+  _healObject: {fileID: 140272080220028359, guid: 253f6e29c373f5448b8a789bb1be86c0, type: 3}
   OnDamageGD:
     m_PersistentCalls:
       m_Calls: []
@@ -148,8 +150,8 @@ MonoBehaviour:
   _nextWayPointDistance: 1.2
   _attackRate: 1.5
   _animator: {fileID: 4235128642274772852}
-  _detectionSize: 4
-  _attackDetectionSize: 2.5
+  _detectionSize: 6
+  _attackDetectionSize: 4
   _detectionLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -184,11 +186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4492906594597755390, guid: db34cc9e232fad84881c858b321ff0da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 4492906594597755390, guid: db34cc9e232fad84881c858b321ff0da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 4492906594597755390, guid: db34cc9e232fad84881c858b321ff0da, type: 3}
       propertyPath: m_LocalPosition.z

@@ -12,7 +12,7 @@ public class HealComponentBehaviour : MonoBehaviour
     [SerializeField] private LayerMask _player;
     [SerializeField] private Rigidbody2D _rb;
 
-    private float _healValue = 20;
+    private float _healValue;
 
     public float HealValue { get => _healValue; set => _healValue = value; }
 

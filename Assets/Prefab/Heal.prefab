@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 140272080220028359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9798747, y: -2.991947, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6075281, y: 0.6075281, z: 0.6075281}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb6e971400834144820c18b35686aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trackRadius: 4
-  _colliderRadius: 0.5
-  _speed: 400
+  _trackRadius: 2.01
+  _colliderRadius: 0.32
+  _speed: 700
   _player:
     serializedVersion: 2
     m_Bits: 64

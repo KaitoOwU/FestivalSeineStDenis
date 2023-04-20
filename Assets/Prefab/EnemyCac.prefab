@@ -105,6 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 150
   _knockBackResistance: 10
+  _healDropValue: 20
+  _healObject: {fileID: 140272080220028359, guid: 253f6e29c373f5448b8a789bb1be86c0, type: 3}
   OnDamageGD:
     m_PersistentCalls:
       m_Calls: []
@@ -148,12 +150,11 @@ MonoBehaviour:
   _nextWayPointDistance: 1.5
   _attackRate: 1
   _animator: {fileID: 759104214599236873}
-  _detectionSize: 6
+  _detectionSize: 5
   _attackDetectionSize: 0.93
   _detectionLayer:
     serializedVersion: 2
     m_Bits: 64
-  _bulletSpeed: 0
   _damage: 10
 --- !u!1001 &759104214032185508
 PrefabInstance:
