@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa149bbcdd43644f9c21d55cffe142b, type: 3}
+  m_Name: Dialogue1
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: "Menace momentan\xE9ment \xE9cart\xE9e, r\xE9flexion \xE0 la suite du
+      plan d\u2019action..."
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: "Analyse de l\u2019environnement\u2026 \nLocalisation actuelle : Plan\xE8te
+      Bi0m3k-406..."
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 3
+    _line: " Bi0m3k-406, plan\xE8te connue pour ses r\xE9sidents hostiles et mortels,
+      entit\xE9s robotiques aux capacit\xE9s de r\xE9g\xE9n\xE9ration anormalement
+      d\xE9velopp\xE9es."
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: "Rester statiques r\xE9duit drastiquement nos chances de survie, soldat
+      le meilleur plan d\u2019action reste l\u2019exploration."
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: "L\u2019union fait la force, strat\xE9gie optimale : restons proches et
+      \xE9voluons \xE0 la recherche d\u2019\xE9l\xE9ments pouvant accroitre nos chances
+      de survie."

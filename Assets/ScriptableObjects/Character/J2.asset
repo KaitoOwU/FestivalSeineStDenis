@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c01ec448d60d3d74ea017c37b5a8d367, type: 3}
-  m_Name: TestChara2
+  m_Name: J2
   m_EditorClassIdentifier: 
-  _gender: 1
-  _name: Ann
-  _description: UwU
+  _gender: 0
+  _name: CL-7
+  _description: "Homme muscl\xE9 joueur 2"
   _happySprite: {fileID: 21300000, guid: a23ec77ac65e114459402fe087ac7ebd, type: 3}
   _sadSprite: {fileID: 21300000, guid: cdf7d1dc74701674687f1c4d47a81d66, type: 3}
   _angrySprite: {fileID: 21300000, guid: bfef1a4638e02ab44855203ce9835e9a, type: 3}

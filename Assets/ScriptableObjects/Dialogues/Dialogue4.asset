@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa149bbcdd43644f9c21d55cffe142b, type: 3}
+  m_Name: Dialogue4
+  m_EditorClassIdentifier: 
+  _lines:
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: "Soldat CL-4\u2026"
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: 'Oui CL-7 ? '
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: "V\u2026 vos performances au combat sont remarquables, je suis fier de
+      combattre \xE0 vos cot\xE9s."
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: 'Merci CL-7, vos techniques de combat sont un plaisir pour les yeux ! '
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: ... !
+  - _character: {fileID: 11400000, guid: d42623d3d2359e145b5174610c29bdd5, type: 2}
+    _emotion: 0
+    _line: "La source d'\xE9nergie est tout proche, qu\u2019allons-nous d\xE9couvrir...
+      ? J'en frissonne\r !\nNous devons en avoir le c\u0153ur net\r.\n"
+  - _character: {fileID: 11400000, guid: 1d76b63dcc10b364b8d40cf30d96d4ea, type: 2}
+    _emotion: 0
+    _line: "O\u2026Oui, avan\xE7ons\u2026\n"

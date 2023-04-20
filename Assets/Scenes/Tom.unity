@@ -2912,6 +2912,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3729748904410901005, guid: 51d10425b799ee14d8d0fabf071be1db, type: 3}
+      propertyPath: OnAreaEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729748904410901005, guid: 51d10425b799ee14d8d0fabf071be1db, type: 3}
       propertyPath: OnAreaExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1185533782}
@@ -2925,6 +2929,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3729748904410901005, guid: 51d10425b799ee14d8d0fabf071be1db, type: 3}
       propertyPath: OnAreaEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729748904410901005, guid: 51d10425b799ee14d8d0fabf071be1db, type: 3}
+      propertyPath: OnAreaEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3729748904410901005, guid: 51d10425b799ee14d8d0fabf071be1db, type: 3}
@@ -2944,9 +2952,13 @@ PrefabInstance:
       value: DialogueManager, ProjectAssembly
       objectReference: {fileID: 0}
     - target: {fileID: 3729748904410901005, guid: 51d10425b799ee14d8d0fabf071be1db, type: 3}
+      propertyPath: OnAreaEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueManager, ProjectAssembly
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729748904410901005, guid: 51d10425b799ee14d8d0fabf071be1db, type: 3}
       propertyPath: OnAreaEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: 876aafb6460bda54480eb8479da09565, type: 2}
+      objectReference: {fileID: 11400000, guid: 248f5ea7c4fc43d4880e26ebc5e6f560, type: 2}
     - target: {fileID: 3729748904410901005, guid: 51d10425b799ee14d8d0fabf071be1db, type: 3}
       propertyPath: OnAreaExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
