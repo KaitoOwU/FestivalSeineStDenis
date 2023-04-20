@@ -1786,7 +1786,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 6.3
+    OrthographicSize: 4
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -1935,7 +1935,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.3
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2014,6 +2014,7 @@ MonoBehaviour:
   _p2: {fileID: 2117620425}
   _fade: {fileID: 2144712507}
   _ship: {fileID: 2079224322}
+  _startButton: {fileID: 219422547}
 --- !u!1 &1758130741
 GameObject:
   m_ObjectHideFlags: 0

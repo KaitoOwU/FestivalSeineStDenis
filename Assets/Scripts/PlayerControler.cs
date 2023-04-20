@@ -41,6 +41,8 @@ public class PlayerControler : MonoBehaviour
 
     private void Start()
     {
+
+        _joyStickLastPosition = 1;
         _player = GetComponent<Player>();
         Rb = GetComponent<Rigidbody2D>();
         _playerShoot = GetComponent<Player1ShootBehaviour>();

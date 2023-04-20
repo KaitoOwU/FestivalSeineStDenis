@@ -45,6 +45,8 @@ public class EnemyAI : MonoBehaviour
     private Coroutine AttackRoutine;
     private Coroutine AttackCoolDownRoutine;
 
+
+
     public ENEMYSTATE EnemyState { get => _enemyState; set => _enemyState = value; }
     public Coroutine FollowRoutine1 { get => FollowRoutine; set => FollowRoutine = value; }
 
@@ -103,6 +105,11 @@ public class EnemyAI : MonoBehaviour
         if(target != null && FollowRoutine1 == null && _enemyState != ENEMYSTATE.ATTACKING)
         {
             FollowRoutine1 = StartCoroutine(EnemyFollowRoutine(target.transform));
+        }
+
+        if(target == null)
+        {
+            _rb.velocity = Vector2.zero;
         }
 
         if(EnemyState != ENEMYSTATE.KNOCBACK)
