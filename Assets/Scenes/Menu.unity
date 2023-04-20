@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c361dc3e7d88f034390537eeac5d4867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameScene: 0
+  _gameScene: 1
   _menuScene: 0
 --- !u!4 &1125189786
 Transform:
