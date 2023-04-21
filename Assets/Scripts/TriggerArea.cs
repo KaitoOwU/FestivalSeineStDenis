@@ -10,6 +10,8 @@ public class TriggerArea : MonoBehaviour
     [SerializeField] UnityEvent OnAreaEnter;
     [SerializeField] UnityEvent OnAreaExit;
 
+    [SerializeField] Animator _fade;
+
     [SerializeField] private Vector2 _topRight;
     [SerializeField] private Vector2 _botleft;
 
@@ -78,6 +80,10 @@ public class TriggerArea : MonoBehaviour
 
                 if (_isFinalDialogue)
                 {
+                    yield return new WaitUntil( () => DialogueManager.instance.DialogueCanva.activeSelf == false);
+                    _fade.SetTrigger("FadeIn");
+                    yield return new WaitForSeconds(1f);
+                    GameManager.instance.OpenMenuScene();
                     SceneManager.LoadScene(_winScene);
                 }
 

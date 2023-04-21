@@ -21,6 +21,7 @@ public class Player1ShootBehaviour : MonoBehaviour
     private float _kockBack;
     private float _damage;
 
+    private AmmoDisplay _ammo;
 
     private float _shootInterval;
     private float _shootRange;
@@ -70,6 +71,7 @@ public class Player1ShootBehaviour : MonoBehaviour
     public float KockBack { get => _kockBack; set => _kockBack = value; }
     public float Damage { get => _damage; set => _damage = value; }
     public LineRenderer Laser { get => _laser; set => _laser = value; }
+    public AmmoDisplay Ammo { get => _ammo; set => _ammo = value; }
 
     private void Start()
     {
@@ -114,7 +116,12 @@ public class Player1ShootBehaviour : MonoBehaviour
     {
         if(ReloadRoutine == null)
         {
-            _laser.gameObject.SetActive(false);
+
+            if(_player.PlayerType == Player.PLAYER.PLAYER1)
+            {
+                AudioManager.instance.Stop("P1Shoot");
+                _laser.gameObject.SetActive(false);
+            }
             ReloadRoutine = StartCoroutine(ShootReloadRoutine());
         }
     }
@@ -145,6 +152,7 @@ public class Player1ShootBehaviour : MonoBehaviour
             if (_player.PlayerType == Player.PLAYER.PLAYER1)
             {
                 _laser.gameObject.SetActive(false);
+                AudioManager.instance.Stop("P1Shoot");
             }
 
             OnStopShoot?.Invoke();
@@ -190,7 +198,7 @@ public class Player1ShootBehaviour : MonoBehaviour
             RaycastHit2D raycast = Physics2D.Raycast(transform.position, _shootPoint.up, ShootRange, _enemyLayer);
             Debug.DrawRay(transform.position, _shootPoint.up * ShootRange, Color.red, 0.5f);
 
-
+           
             if(raycast.collider != null && _player.PlayerType == Player.PLAYER.PLAYER1)
             {
                 _laser.gameObject.SetActive(true);
@@ -212,6 +220,7 @@ public class Player1ShootBehaviour : MonoBehaviour
             }
 
             _currentAmmo--;
+            Ammo.UpdateImage((float)_currentAmmo / (float)_maxAmmo);
             //Debug.Log("Ammo: " + _currentAmmo);
             CoolDownRoutine = StartCoroutine(ShootCoolDownRoutine());
             yield return new WaitUntil( () => CoolDownRoutine == null);
@@ -245,6 +254,7 @@ public class Player1ShootBehaviour : MonoBehaviour
         yield return new WaitForSeconds(ReloadTime * 0.5f);
 
         _currentAmmo = MaxAmmo;
+        Ammo.UpdateImage((float)_currentAmmo / (float)_maxAmmo);
         ReloadCompleted();
         Debug.Log("EndReload");
     }

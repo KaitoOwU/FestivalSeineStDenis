@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHp: 150
-  _knockBackResistance: 10
+  _knockBackResistance: 5
   _healDropValue: 20
   _healObject: {fileID: 140272080220028359, guid: 253f6e29c373f5448b8a789bb1be86c0, type: 3}
   OnDamageGD:
@@ -262,6 +262,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &700385912790136146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310963260479451790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf30ed40dbeeaa4b9423612ff233cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
 --- !u!4 &2310963260795587634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3069996536979059862, guid: 33bfd11b3157a494cb1165840761cb2c, type: 3}

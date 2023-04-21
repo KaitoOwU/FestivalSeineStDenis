@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour, IShootableEnemy, IHealable
     [SerializeField] private Dialogue _p2Dead;
 
     [SerializeField] private GameObject _canvaDead;
+    private Animator _fade;
 
     [Scene]
     [SerializeField] private int _daedScene;
@@ -31,6 +32,7 @@ public class PlayerHealth : MonoBehaviour, IShootableEnemy, IHealable
     public Slider Layer1Slider { get => _layer1Slider; set => _layer1Slider = value; }
     public Slider Layer2Slider { get => _layer2Slider; set => _layer2Slider = value; }
     public Animator HealthBarAnimator { get => _healthBarAnimator; set => _healthBarAnimator = value; }
+    public Animator Fade { get => _fade; set => _fade = value; }
 
     private void Start()
     {
@@ -63,6 +65,7 @@ public class PlayerHealth : MonoBehaviour, IShootableEnemy, IHealable
             {
                 DialogueManager.instance.QueueDialogue(_p2Dead);
             }
+            Fade.SetTrigger("FadeIn");
             StartCoroutine(WaitCanva());
             Debug.Log("t'es mort");
         }

@@ -10,6 +10,9 @@ public class GetAnimationEvent : MonoBehaviour
 
     public void Attack()
     {
-        OnAttack.Invoke();
+        if(DialogueManager.instance.DialogueCanva.activeSelf == false)
+        {
+            OnAttack?.Invoke();
+        }
     }
 }

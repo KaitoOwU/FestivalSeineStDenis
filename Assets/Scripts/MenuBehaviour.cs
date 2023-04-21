@@ -12,6 +12,9 @@ public class MenuBehaviour : MonoBehaviour
     [SerializeField] private GameObject _ship;
     [SerializeField] private GameObject _startButton;
 
+
+    [SerializeField] private AudioManager _audio;
+
     public void StartGameRoutine()
     {
         StartCoroutine(StartGame());
@@ -24,9 +27,12 @@ public class MenuBehaviour : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         _p1.SetActive(false);
         _p2.SetActive(false);
+        _audio.Play("Ship");
         yield return new WaitForSeconds(1.5f);
         _fade.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        _audio.Play("Annonce");
+        yield return new WaitForSeconds(3.75f);
         GameManager.instance.OpenGameScene();
     }
 }

@@ -63,11 +63,14 @@ public class PlayerManager : MonoBehaviour
         SceneManager.activeSceneChanged += SceneChange;
     }
 
+
+
     private void SceneChange(Scene s1, Scene s2)
     {
         if(SceneManager.GetActiveScene().name == "Tom")
         {
             Camera.StartCameraMove();
+            _players[0].transform.position = new Vector2(_players[0].transform.position.x, _players[0].transform.position.y + 1.5f);
         }
     }
     public void SkipDialogue()

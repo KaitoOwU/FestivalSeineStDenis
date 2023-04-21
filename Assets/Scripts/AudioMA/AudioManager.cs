@@ -34,6 +34,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         Play("Theme");
+        Play("Crash");
     }
 
     public void UpdateSound(string name, float volume, float pitch, bool loop)

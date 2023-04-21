@@ -5,7 +5,9 @@ using UnityEngine.Events;
 
 public class GetPlayerAnimationEvent : MonoBehaviour
 {
+    [SerializeField] private AudioManager audioManager;
 
+    private int _shootindex;
     public void Reload1P1()
     {
         AudioManager.instance.Play("Reload1P1");
@@ -26,9 +28,32 @@ public class GetPlayerAnimationEvent : MonoBehaviour
         AudioManager.instance.Play("Reload2P2");
     }
 
+    public void Slash()
+    {
+        if (DialogueManager.instance.DialogueCanva.activeSelf == true)
+        {
+            return;
+        }
+        AudioManager.instance.Play("Slash");
+    }
+
+    public void SlashReverse()
+    {
+        if (DialogueManager.instance.DialogueCanva.activeSelf == true)
+        {
+            return;
+        }
+        AudioManager.instance.Play("SlashReverse");
+    }
+
     public void ShootEnemy()
     {
-        int i = Random.Range(0, 3);
+        if (DialogueManager.instance.DialogueCanva.activeSelf == true)
+        {
+            return;
+        }
+        int i = _shootindex % 3;
+        _shootindex++;
         switch (i)
         {
             case 0:
@@ -42,6 +67,47 @@ public class GetPlayerAnimationEvent : MonoBehaviour
                 break;
 
         }
+    }
+
+    public void ShootPlayer()
+    {
+        
+        int i = _shootindex % 3;
+        _shootindex++;
+        switch (i)
+        {
+            case 0:
+                AudioManager.instance.Play("PShoot1");
+                break;
+            case 1:
+                AudioManager.instance.Play("PShoot2");
+                break;
+            case 2:
+                AudioManager.instance.Play("PShoot3");
+                break;
+
+        }
+    }
+
+    public void ShootPlayer1()
+    {
+        AudioManager.instance.Play("P1Shoot");
+    }
+
+    public void StopShootPlayer1()
+    {
+        AudioManager.instance.Stop("P1Shoot");
+    }
+
+
+    public void ChooseP1()
+    {
+        audioManager.Play("P1");
+    }
+
+    public void ChooseP2()
+    {
+        audioManager.Play("P2");
     }
 
 }

@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject _chara1;
     [SerializeField] private GameObject _chara2;
+    [SerializeField] private SpriteRenderer _arrow;
+    [SerializeField] private Color32 _arrowP1;
+    [SerializeField] private Color32 _arrowP2;
 
     [Header("player 1 stats")]
     [SerializeField] private float _speed;
@@ -53,6 +56,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _damageP1;
 
     [SerializeField] private LineRenderer _laser;
+
 
 
     [Header("player 2 stats")]
@@ -126,6 +130,7 @@ public class Player : MonoBehaviour
             _shootComponent.OnStopReload += StopReloadParticuleP1;
 
             _shootComponent.Laser = _laser;
+            _arrow.color = _arrowP1;
         }
         else
         {
@@ -145,6 +150,7 @@ public class Player : MonoBehaviour
             _shootComponent.OnStartReload += ReloadParticuleP2;
             _shootComponent.OnStopReload += StopReloadParticuleP2;
             _shootComponent.OnStopShoot += StopShootParticuleP2;
+            _arrow.color = _arrowP2;
 
         }
     }
